@@ -22,7 +22,14 @@ export const metadata: Metadata = {
     template: "%s | Raquel Santos",
   },
   description: "Raquel Santos | Portfolio",
-  keywords: ["Raquel Santos", "Portfolio", "Creative", "Professional", "Web Developer", "Front-End Developer"],
+  keywords: [
+    "Raquel Santos",
+    "Portfolio",
+    "Creative",
+    "Professional",
+    "Web Developer",
+    "Front-End Developer",
+  ],
   authors: [{ name: "Raquel Santos" }],
   creator: "Raquel Santos",
   openGraph: {
@@ -58,9 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-
-      </head>
+      <head></head>
       <body
         className={`${roboto.variable} ${robotoMono.variable} antialiased`}
         suppressHydrationWarning

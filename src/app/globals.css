@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-    /* Color system */
+  /* Color system */
   --background: #ffffff;
   --foreground: #171717;
   --muted: #f5f5f5;
@@ -10,7 +10,7 @@
   --accent: #f5f5f5;
   --accent-foreground: #171717;
 
-    /* Typography */
+  /* Typography */
   --font-sans: var(--font-roboto);
   --font-mono: var(--font-roboto-mono);
 }
@@ -35,8 +35,13 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-roboto-mono), 'Courier New', monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-roboto-mono), "Courier New", monospace;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
