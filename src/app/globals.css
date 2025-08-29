@@ -45,3 +45,11 @@ h6 {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+
+body {
+  background-image: url('/background-image.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
