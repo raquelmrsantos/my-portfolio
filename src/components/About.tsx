@@ -12,14 +12,14 @@ export default function About() {
             <span className="text-6xl">👨‍💻</span>
           </div>
         </div>
-        <div className="md:w-2/3 text-white">
-          <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <p className="text-lg mb-4 text-white/90">
+        <div className="md:w-2/3 text-black">
+          <h2>About Me</h2>
+          <p className="text-lg mb-4 text-black/90">
             I&apos;m a passionate developer with expertise in modern web
             technologies. I love creating beautiful, functional, and
             user-friendly applications.
           </p>
-          <p className="text-lg text-white/90">
+          <p className="text-lg text-black/90">
             My journey in tech has led me to specialize in React, TypeScript,
             and creating seamless user experiences.
           </p>

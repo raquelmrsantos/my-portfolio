@@ -20,12 +20,17 @@ const robotoMono = Roboto_Mono({
 const grandSlang = localFont({
   src: [
     {
-      path: "./grandslang-roman.woff2",
+      path: "../../public/fonts/grandslangroman.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/grandslang-roman.woff",
+      path: "../../public/fonts/grandslangroman.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/grandslangroman.ttf",
       weight: "400",
       style: "normal",
     },
@@ -70,11 +75,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  viewport: {
+/*   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
-  },
+  }, */
 };
 
 export default function RootLayout({
@@ -86,7 +91,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head></head>
       <body
-        className={`${roboto.variable} ${robotoMono.variable} ${grandSlang.variable} antialiased`}
+        className={`${roboto.className} ${robotoMono.className} ${grandSlang.className} antialiased`}
         suppressHydrationWarning
       >
         {children}

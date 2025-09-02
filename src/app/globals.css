@@ -16,7 +16,7 @@
   --font-header: var(--font-grand-slang);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -26,7 +26,7 @@
     --accent: #171717;
     --accent-foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
@@ -61,17 +61,4 @@ h6 {
   font-weight: 400; /* GrandSlangRoman is not bold */
   letter-spacing: 0.5px;
   line-height: 1.2;
-}
-
-/* Utility classes for font families */
-.font-sans {
-  font-family: var(--font-sans);
-}
-
-.font-mono {
-  font-family: var(--font-mono);
-}
-
-.font-header {
-  font-family: var(--font-header);
 }

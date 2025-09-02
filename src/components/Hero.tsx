@@ -3,7 +3,7 @@ import Section from "./Section";
 export default function Hero() {
   return (
       <Section>
-        <div>RAQUEL SANTOS</div>;
+        <h1>RAQUEL SANTOS</h1>;
       </Section>
   );
 }
