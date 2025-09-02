@@ -42,6 +42,8 @@ body {
   background-attachment: fixed;
   background-blend-mode: overlay;
 
+  padding: 20px;
+
 }
 
 /* Ensure background image works well with dark mode */

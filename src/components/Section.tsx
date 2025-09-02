@@ -74,7 +74,7 @@ export default function Section({
   return (
     <div
       ref={sectionRef}
-      className={`h-[calc(100vh-40px)] overflow-hidden rounded-[20px] bg-[#EDEDED] p-[20px] ${className}`}
+      className={`h-[calc(100vh-40px)] overflow-hidden rounded-[20px] bg-[#EDEDED] my-[20px] ${className}`}
     >
       {children}
     </div>
