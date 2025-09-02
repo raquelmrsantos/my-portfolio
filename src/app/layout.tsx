@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -16,12 +17,30 @@ const robotoMono = Roboto_Mono({
   display: "swap",
 });
 
+const grandSlang = localFont({
+  src: [
+    {
+      path: "./grandslang-roman.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/grandslang-roman.woff",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-grand-slang",
+  display: "swap",
+  fallback: ["serif"],
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Raquel Santos | Portfolio",
     template: "%s | Raquel Santos",
   },
-  description: "Raquel Santos | Portfolio",
+  description: "Raquel Santos - Creative Front-End Web Developer | Portfolio",
   keywords: [
     "Raquel Santos",
     "Portfolio",
@@ -37,7 +56,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.raqueldossantos.com",
     title: "Raquel Santos | Portfolio",
-    description: "Raquel Santos - Web Developer | Portfolio",
+    description: "Raquel Santos - Creative Front-End Web Developer | Portfolio",
     siteName: "Raquel Santos Portfolio",
   },
   robots: {
@@ -67,7 +86,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head></head>
       <body
-        className={`${roboto.variable} ${robotoMono.variable} antialiased`}
+        className={`${roboto.variable} ${robotoMono.variable} ${grandSlang.variable} antialiased`}
         suppressHydrationWarning
       >
         {children}
