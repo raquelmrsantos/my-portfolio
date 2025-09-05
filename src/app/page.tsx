@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import BackToTop from "@/components/BackToTop";
+import DateComp from "@/components/DateComp";
 //import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <main>
         <Navbar />
+        <DateComp />
         <Hero />
         <About />
         <Experience />
