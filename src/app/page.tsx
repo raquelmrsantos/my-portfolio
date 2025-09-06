@@ -1,7 +1,7 @@
 import About from "@/components/About";
 import BackToTop from "@/components/BackToTop";
 import DateComp from "@/components/DateComp";
-//import Contact from "@/components/Contact";
+import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -16,6 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
+        <Contact />
       </main>
       <Footer />
       <BackToTop />

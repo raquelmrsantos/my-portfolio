@@ -4,6 +4,7 @@ export default function Experience() {
   return (
     <Section>
       <div>
+        <h1>Experience</h1>
         <h2>Present Technologies</h2>
         <h3>Junior Software Engineer</h3>
         <p>2023 - 2025</p>

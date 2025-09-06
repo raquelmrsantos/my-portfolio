@@ -1,8 +1,12 @@
 import Section from "./Section"
 
 export default function Contact() {
-  return 
+  return (
   <Section>
-    <div></div>;
-  </Section>;
+    <>
+      <h1>Contact</h1>
+      <div></div>;
+    </>
+  </Section>
+)
 }
