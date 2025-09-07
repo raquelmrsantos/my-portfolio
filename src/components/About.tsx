@@ -5,7 +5,7 @@ import Section from "./Section";
 
 export default function About() {
   return (
-    <Section className='p-8 md:p-12' animationType='slideLeft' delay={0.2}>
+    <Section className='p-8 md:p-12'>
       <div className='flex flex-col md:flex-row items-center gap-8'>
         <div className='md:w-1/3'>
           <div className='w-48 h-48 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center'>
