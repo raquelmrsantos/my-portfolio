@@ -10,7 +10,7 @@ interface SectionProps {
 export default function Section({ children, className = '' }: SectionProps) {
   return (
     <div
-      className={`h-[calc(100vh-40px)] overflow-hidden rounded-[20px] bg-[#EDEDED] my-[20px] ${className}`}
+      className={`h-[calc(100vh-40px)] overflow-hidden rounded-[20px] bg-[#EDEDED] ${className}`}
     >
       {children}
     </div>

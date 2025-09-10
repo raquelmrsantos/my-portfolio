@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 export default function DateComp() {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(0);
   const [monthIndex, setMonthIndex] = useState(0);
 
   useEffect(() => {
@@ -52,33 +52,33 @@ export default function DateComp() {
   ];
 
   return (
-    <div className='flex flex-col items-start bg-black rounded-xl px-6 py-4 max-w-md shadow-lg'>
+    <div /* className='flex flex-col items-start bg-black rounded-xl px-6 py-4 max-w-md shadow-lg' */>
       {/* Date pills and hover group */}
-      <div className='flex items-end gap-4 group relative'>
+      <div className='flex items-end group relative'>
         {/* Day pill */}
         <div className='relative'>
-          <div className='bg-stone-100 rounded-full px-5 py-1 flex items-center justify-center min-w-[60px]'>
-            <span className='text-black text-[40px] leading-none tracking-tighter font-date'>
+          <div className='rounded-full px-5 py-1 flex items-center justify-center min-w-[60px]'>
+            <span className='text-[10vh] leading-none font-date'>
               {String(day).padStart(2, '0')}
             </span>
           </div>
         </div>
         {/* Month and availability */}
         <div className='flex flex-col items-start'>
-          <span className='text-stone-100 text-[22px] font-bold leading-none mb-1'>
+          <span className='text-[22px] font-bold font-text leading-none mb-1'>
             {months[monthIndex]}
           </span>
-          <span className='text-stone-100 text-[18px] font-bold leading-tight'>
+          <span className='text-[18px] font-bold font-text leading-tight'>
             available
             <br />
             for work
           </span>
         </div>
         {/* Disclaimer: only visible on hover */}
-        <div className='absolute left-0 top-full mt-2 text-stone-100 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none'>
+        <div className='absolute left-0 top-full mt-2 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200  pointer-events-none'>
           <div className='flex items-start gap-2'>
             <span className='text-lg'>☹</span>
-            <div className='text-sm leading-relaxed'>
+            <div className='text-sm leading-relaxed font-text'>
               <strong>Availability shifts with projects.</strong>
               <br />
               Reach out to see where

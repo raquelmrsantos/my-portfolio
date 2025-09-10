@@ -15,6 +15,8 @@ const Three = ({ children }: ThreeProps) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    const container = containerRef.current; // <-- capture once
+
     let camera: THREE.PerspectiveCamera;
     let renderer: THREE.WebGPURenderer;
     let postProcessing: THREE.PostProcessing;
@@ -24,7 +26,7 @@ const Three = ({ children }: ThreeProps) => {
       renderer = new THREE.WebGPURenderer();
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
-      containerRef.current?.appendChild(renderer.domElement);
+      container?.appendChild(renderer.domElement);
 
       camera = new THREE.PerspectiveCamera(
         70,
@@ -111,14 +113,14 @@ const Three = ({ children }: ThreeProps) => {
       if (renderer) {
         renderer.dispose();
       }
-      if (containerRef.current) {
-        containerRef.current.innerHTML = '';
+      if (container) {
+        container.innerHTML = '';
       }
     };
   }, []); // Empty dependency array means this effect runs once on mount
 
   useEffect(() => {
-    const intervalTime = 20; // Update every 20ms
+    const intervalTime = 50; // Update every 50ms
     const increment = 1; // Increment by 1%
 
     const interval = setInterval(() => {
@@ -135,13 +137,13 @@ const Three = ({ children }: ThreeProps) => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, []); 
 
   if (isLoading) {
     return (
       <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
         <div ref={containerRef}></div>
-        <div className='font-mono align-text-top text-center flex flex-col items-center h-full pointer-events-none zindex-10 absolute inset-0'>
+        <div className='font-mono align-text-top text-center flex flex-col items-center h-full pointer-events-none zindex-10 absolute inset-0 mix-blend-difference'>
           Amazing portfolio loading...{' '}
         </div>
         <div className='mt-2 font-mono align-text-bottom text-center flex flex-col items-center justify-end h-full pointer-events-none zindex-10 absolute inset-0'>
