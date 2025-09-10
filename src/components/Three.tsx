@@ -143,7 +143,7 @@ const Three = ({ children }: ThreeProps) => {
     return (
       <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
         <div ref={containerRef}></div>
-        <div className='font-mono align-text-top text-center flex flex-col items-center h-full pointer-events-none zindex-10 absolute inset-0 mix-blend-difference'>
+        <div className='font-mono align-text-top text-center flex flex-col items-center h-full pointer-events-none zindex-10 absolute inset-0'>
           Amazing portfolio loading...{' '}
         </div>
         <div className='mt-2 font-mono align-text-bottom text-center flex flex-col items-center justify-end h-full pointer-events-none zindex-10 absolute inset-0'>
