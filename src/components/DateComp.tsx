@@ -52,9 +52,9 @@ export default function DateComp() {
   ];
 
   return (
-    <div /* className='flex flex-col items-start bg-black rounded-xl px-6 py-4 max-w-md shadow-lg' */>
+    <div className='flex justify-end md:p-12'>
       {/* Date pills and hover group */}
-      <div className='flex items-end group relative'>
+      <div className='flex items-center group relative'>
         {/* Day pill */}
         <div className='relative'>
           <div className='rounded-full px-5 py-1 flex items-center justify-center min-w-[60px]'>
