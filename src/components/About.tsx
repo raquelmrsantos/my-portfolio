@@ -4,27 +4,25 @@ import React from "react";
 import Section from "./Section";
 
 export default function About() {
-  return (
-    <Section className='p-8 md:p-12'>
-      <div className='flex flex-col md:flex-row items-center gap-8'>
-        <div className='md:w-1/3'>
-          <div className='w-48 h-48 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center'>
-          </div>
-        </div>
-        <div className='md:w-2/3 text-black'>
-          <h1>About Me</h1>
-          <p className='text-lg mb-4 text-black/90 text-justify'>
-            I&apos;m a passionate developer with expertise in modern web
-            technologies. I love creating beautiful, functional, and
-            user-friendly applications.
-          </p>
-          <p className='text-lg text-black/90 text-justify'>
-            My journey in tech has led me to specialize in React, TypeScript,
-            and creating seamless user experiences.
-          </p>
-        </div>
-      </div>
-    </Section>
-  );
+    return (
+        <Section className='py-20 md:py-28'>
+            <div className='grid md:grid-cols-2 gap-12 md:gap-16 items-start'>
+                <div>
+                    <h1 className="mb-8">About</h1>
+                </div>
+                <div className='space-y-6'>
+                    <p className='text-lg font-light leading-relaxed'>
+                        I&apos;m a passionate developer with expertise in modern web
+                        technologies. I focus on creating beautiful, functional, and
+                        user-friendly applications that solve real problems.
+                    </p>
+                    <p className='text-lg font-light leading-relaxed'>
+                        My journey in technology has led me to specialize in React, TypeScript,
+                        and crafting seamless user experiences that bridge the gap between
+                        design and functionality.
+                    </p>
+                </div>
+            </div>
+        </Section>
+    );
 }
-

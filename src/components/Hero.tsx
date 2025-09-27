@@ -3,10 +3,15 @@ import Section from './Section';
 import AnimatedTitle from '@/components/AnimatedTitle';
 
 export default function Hero() {
-  return (
-    <Section>
-        <AnimatedTitle title="WEB DEVELOPER" />
-      <DateComp />
-    </Section>
-  );
+    return (
+        <Section>
+            <div className="text-center space-y-8">
+                <AnimatedTitle title="WEB DEVELOPER" />
+                <div className="text-lg md:text-xl font-light tracking-wide opacity-80">
+                    Crafting elegant digital experiences
+                </div>
+                <DateComp />
+            </div>
+        </Section>
+    );
 }
