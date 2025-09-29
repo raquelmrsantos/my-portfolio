@@ -137,7 +137,7 @@ const Three = ({ children }: ThreeProps) => {
     return () => {
       clearInterval(interval);
     };
-  }, []); 
+  }, []);
 
   if (isLoading) {
     return (

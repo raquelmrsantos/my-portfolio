@@ -1,112 +1,116 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 
 const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    useEffect(() => {
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
-    }, [isMobileMenuOpen]);
-
-    const handleNavClick = (href: string) => {
-        setIsMobileMenuOpen(false);
-
-        const element = document.querySelector(href);
-        if (element && element instanceof HTMLElement) {
-            const offsetTop = element.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
     };
+  }, [isMobileMenuOpen]);
 
-    return (
-        <>
-            <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                isScrolled ? 'bg-white/90 backdrop-blur-sm border-b border-black/10' : 'bg-transparent'
-            }`}>
-                <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16">
-                    <div className="flex justify-between items-center h-16 md:h-20">
-                        <button
-                            onClick={() => handleNavClick('#home')}
-                            className="text-xl md:text-2xl cursor-pointer"
-                        >
-                            Raquel Santos
-                        </button>
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
 
-                        {/* Desktop Navigation */}
-                        <div className="hidden md:flex space-x-8">
-                            {navItems.map((item) => (
-                                <button
-                                    key={item.name}
-                                    onClick={() => handleNavClick(item.href)}
-                                    className="elegant-link text-sm font-light tracking-wide uppercase"
-                                >
-                                    {item.name}
-                                </button>
-                            ))}
-                        </div>
+    const element = document.querySelector(href);
+    if (element && element instanceof HTMLElement) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
 
-                        {/* Mobile menu button */}
-                        <div className="md:hidden">
-                            <button
-                                onClick={toggleMobileMenu}
-                                className="hamburger"
-                                aria-label="Toggle menu"
-                            >
-                                <span className={isMobileMenuOpen ? 'open' : ''}></span>
-                                <span className={isMobileMenuOpen ? 'open' : ''}></span>
-                                <span className={isMobileMenuOpen ? 'open' : ''}></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
-            {/* Mobile Menu Overlay */}
-            <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
-                {navItems.map((item, index) => (
-                    <button
-                        key={item.name}
-                        onClick={() => handleNavClick(item.href)}
-                        className="mobile-menu-item elegant-link"
-                        style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
-                    >
-                        {item.name}
-                    </button>
-                ))}
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/90 backdrop-blur-sm border-b border-black/10'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className='max-w-6xl mx-auto px-4 md:px-8 lg:px-16'>
+          <div className='flex justify-between items-center h-16 md:h-20'>
+            <button
+              onClick={() => handleNavClick('#home')}
+              className='text-xl md:text-2xl cursor-pointer'
+            >
+              Raquel Santos
+            </button>
+
+            {/* Desktop Navigation */}
+            <div className='hidden md:flex space-x-8'>
+              {navItems.map(item => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className='elegant-link text-sm font-light tracking-wide uppercase'
+                >
+                  {item.name}
+                </button>
+              ))}
             </div>
-        </>
-    );
+
+            {/* Mobile menu button */}
+            <div className='md:hidden'>
+              <button
+                onClick={toggleMobileMenu}
+                className='hamburger'
+                aria-label='Toggle menu'
+              >
+                <span className={isMobileMenuOpen ? 'open' : ''}></span>
+                <span className={isMobileMenuOpen ? 'open' : ''}></span>
+                <span className={isMobileMenuOpen ? 'open' : ''}></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+        {navItems.map((item, index) => (
+          <button
+            key={item.name}
+            onClick={() => handleNavClick(item.href)}
+            className='mobile-menu-item elegant-link'
+            style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
+          >
+            {item.name}
+          </button>
+        ))}
+      </div>
+    </>
+  );
 }

@@ -9,33 +9,31 @@ import Three from '@/components/Three';
 //import SpinLoader from '@/components/SpinLoader';
 
 export default function Home() {
-    return (
+  return (
     <>
-    <Three >
-         <main>
-            <Navbar />
+      {/*<Three >*/}
+      <main>
+        <Navbar />
 
-            <section id="home">
-                <Hero />
-            </section>
+        <section id='home'>
+          <Hero />
+        </section>
 
-            <section id="about">
-                <About />
-            </section>
+        <section id='about'>
+          <About />
+        </section>
 
-            <section id="experience">
-                <Experience />
-            </section>
+        <section id='experience'>
+          <Experience />
+        </section>
 
-            <section id="contact">
-                <Contact />
-            </section>
-
-            <Footer />
-        </main>
-        <Footer />
-        <BackToTop />
-   </Three>  
+        <section id='contact'>
+          <Contact />
+        </section>
+      </main>
+      <Footer />
+      <BackToTop />
+      {/*</Three>  */}
     </>
-    );
+  );
 }

@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
-import { Roboto, Roboto_Mono, Stint_Ultra_Expanded } from 'next/font/google';
+import {
+  Roboto,
+  Roboto_Mono,
+  Stint_Ultra_Expanded,
+  Sofia_Sans_Condensed,
+} from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -21,6 +26,13 @@ const stintUltraExpanded = Stint_Ultra_Expanded({
   variable: '--font-stint-ultra-expanded',
   subsets: ['latin'],
   weight: '400',
+  display: 'swap',
+  style: 'normal',
+});
+
+const sofiaSansCondensed = Sofia_Sans_Condensed({
+  variable: '--font-sofia-sans-condensed',
+  subsets: ['latin'],
   display: 'swap',
   style: 'normal',
 });
@@ -112,7 +124,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head></head>
       <body
-        className={` ${roboto.variable} ${robotoMono.variable} ${stintUltraExpanded.variable} ${grandSlang.variable} ${maelstrom.variable} antialiased`}
+        className={` ${roboto.variable} ${robotoMono.variable} ${stintUltraExpanded.variable} ${grandSlang.variable} ${maelstrom.variable} ${sofiaSansCondensed.variable} antialiased`}
         suppressHydrationWarning
       >
         {children}
