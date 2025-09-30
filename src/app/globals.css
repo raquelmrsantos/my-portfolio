@@ -14,12 +14,11 @@
 
 @theme inline {
   /* Typography */
-  --font-sans: var(--font-roboto);
-  --font-mono: var(--font-roboto-mono);
   --font-header: var(--font-grand-slang);
   --font-text: var(--font-stint-ultra-expanded);
   --font-date: var(--font-maelstrom);
   --font-sofia-sans-condensed: var(--font-sofia-sans-condensed);
+  --font-spline-sans-mono: var(--font-spline-sans-mono);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -39,7 +38,6 @@ body {
   color: var(--foreground);
   font-weight: 400;
   line-height: 1.6;
-  font-family: var(--font-roboto), sans-serif;
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,9 +53,6 @@ body {
   }
 }
 
-h1 {
-  font-family: var(--font-sofia-sans-condensed), serif;
-}
 h2,
 h3,
 h4,
@@ -66,9 +61,6 @@ h6 {
   font-family: var(--font-grand-slang), serif;
 }
 
-.font-roboto {
-  font-family: var(--font-roboto), sans-serif;
-}
 .font-maelstrom {
   font-family: var(--font-maelstrom), serif;
 }
@@ -78,27 +70,6 @@ h6 {
 
 .font-sofia-sans-condensed {
   font-family: var(--font-sofia-sans-condensed), sans-serif;
-}
-
-h1 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 300;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.75rem;
 }
 
 .section-divider {

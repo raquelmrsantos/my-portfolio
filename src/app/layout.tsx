@@ -1,26 +1,11 @@
 import type { Metadata } from 'next';
 import {
-  Roboto,
-  Roboto_Mono,
   Stint_Ultra_Expanded,
   Sofia_Sans_Condensed,
+  Spline_Sans_Mono,
 } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-
-const roboto = Roboto({
-  variable: '--font-roboto',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
-  display: 'swap',
-});
-
-const robotoMono = Roboto_Mono({
-  variable: '--font-roboto-mono',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
 
 const stintUltraExpanded = Stint_Ultra_Expanded({
   variable: '--font-stint-ultra-expanded',
@@ -32,6 +17,13 @@ const stintUltraExpanded = Stint_Ultra_Expanded({
 
 const sofiaSansCondensed = Sofia_Sans_Condensed({
   variable: '--font-sofia-sans-condensed',
+  subsets: ['latin'],
+  display: 'swap',
+  style: 'normal',
+});
+
+const splineSansMono = Spline_Sans_Mono({
+  variable: '--font-spline-sans-mono',
   subsets: ['latin'],
   display: 'swap',
   style: 'normal',
@@ -124,7 +116,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head></head>
       <body
-        className={` ${roboto.variable} ${robotoMono.variable} ${stintUltraExpanded.variable} ${grandSlang.variable} ${maelstrom.variable} ${sofiaSansCondensed.variable} antialiased`}
+        className={`${stintUltraExpanded.variable} ${grandSlang.variable} ${maelstrom.variable} ${sofiaSansCondensed.variable} ${splineSansMono.variable} antialiased`}
         suppressHydrationWarning
       >
         {children}
