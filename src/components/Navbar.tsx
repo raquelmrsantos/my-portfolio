@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Contact', href: '#contact' },
+  { name: '[ Home ]', href: '#home' },
+  { name: '[ About Me ]', href: '#about' },
+  { name: '[ Experience ]', href: '#experience' },
+  { name: '[ Connect ]', href: '#contact' },
 ];
 
 export default function Navbar() {
@@ -60,11 +60,17 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className='max-w-6xl mx-auto px-4 md:px-8 lg:px-16'>
+        <div className='mx-auto px-4 md:px-8 lg:px-16'>
           <div className='flex justify-between items-center h-16 md:h-20'>
             <button
               onClick={() => handleNavClick('#home')}
-              className='text-xl md:text-2xl cursor-pointer'
+              className='cursor-pointer font-bold uppercase leading-[0.7] text-[8vw] md:text-[6vw] lg:text-[4vw] xl:text-[3vw] 2xl:text-[2.5rem] overflow-hidden'
+              style={{ 
+                fontFamily: 'Sofia Sans Condensed, sans-serif',
+                letterSpacing: '-0.1em',
+                fontWeight: 700,
+                maxWidth: '50vw'
+              }}
             >
               Raquel Santos
             </button>
@@ -80,6 +86,10 @@ export default function Navbar() {
                   {item.name}
                 </button>
               ))}
+            </div>
+
+            <div className='hidden md:block elegant-link text-sm font-light tracking-wide uppercase cursor-pointer' onClick={() => handleNavClick('#contact')}>
+              Contact me
             </div>
 
             {/* Mobile menu button */}

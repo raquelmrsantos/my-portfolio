@@ -1,6 +1,6 @@
 import DateComp from './DateComp';
 import Section from './Section';
-import AnimatedTitle from '@/components/AnimatedTitle';
+import AnimatedHeroTitle from '@/components/AnimatedHeroTitle';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -20,13 +20,11 @@ export default function Hero() {
 
           {/* Text overlay positioned at the top center of the image */}
           <div className='absolute top-8 left-1/2 transform -translate-x-1/2 w-screen max-w-7xl px-4'>
-            <div className='hero-title font-sofia-sans-condensed font-bold tracking-wider text-center'>
-              <AnimatedTitle title='WEB DEVELOPER' />
+              <AnimatedHeroTitle title='WEB DEVELOPER' />
             </div>
-          </div>
         </div>
 
-        <div className='text-lg md:text-xl font-light tracking-wide opacity-80 text-center'>
+        <div className='text-lg md:text-xl font-light uppercase tracking-wide opacity-80 text-center'>
           Crafting elegant digital experiences
         </div>
         <DateComp />
