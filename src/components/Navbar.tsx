@@ -6,21 +6,11 @@ const navItems = [
   { name: '[ Home ]', href: '#home' },
   { name: '[ About Me ]', href: '#about' },
   { name: '[ Experience ]', href: '#experience' },
-  { name: '[ Connect ]', href: '#contact' },
+  { name: '[ Connect ]', href: '#connect' },
 ];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -53,23 +43,17 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/90 backdrop-blur-sm border-b border-black/10'
-            : 'bg-transparent'
-        }`}
-      >
+      <nav className='fixed top-0 left-0 right-0 z-50 mix-blend-difference'>
         <div className='mx-auto px-4 md:px-8 lg:px-16'>
           <div className='flex justify-between items-center h-16 md:h-20'>
             <button
               onClick={() => handleNavClick('#home')}
-              className='cursor-pointer font-bold uppercase leading-[0.7] text-[8vw] md:text-[6vw] lg:text-[4vw] xl:text-[3vw] 2xl:text-[2.5rem] overflow-hidden'
-              style={{ 
+              className='cursor-pointer font-bold uppercase leading-[0.7] text-[8vw] md:text-[6vw] lg:text-[4vw] xl:text-[3vw] 2xl:text-[2.5rem] overflow-hidden text-white'
+              style={{
                 fontFamily: 'Sofia Sans Condensed, sans-serif',
                 letterSpacing: '-0.1em',
                 fontWeight: 700,
-                maxWidth: '50vw'
+                maxWidth: '50vw',
               }}
             >
               Raquel Santos
@@ -81,14 +65,17 @@ export default function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className='elegant-link text-sm font-light tracking-wide uppercase'
+                  className='cursor-pointer text-sm font-light tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
                 >
                   {item.name}
                 </button>
               ))}
             </div>
 
-            <div className='hidden md:block elegant-link text-sm font-light tracking-wide uppercase cursor-pointer' onClick={() => handleNavClick('#contact')}>
+            <div
+              className='hidden md:block text-sm font-light tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
+              onClick={() => handleNavClick('#contact')}
+            >
               Contact me
             </div>
 

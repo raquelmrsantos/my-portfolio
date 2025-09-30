@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Three from '@/components/Three';
+import ConnectForm from '@/components/ConnectForm';
 //import SpinLoader from '@/components/SpinLoader';
 
 export default function Home() {
@@ -25,6 +26,10 @@ export default function Home() {
 
         <section id='experience'>
           <Experience />
+        </section>
+
+        <section id='connect'>
+          <ConnectForm />
         </section>
 
         <section id='contact'>

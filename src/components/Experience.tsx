@@ -5,7 +5,7 @@ export default function Experience() {
     <Section className='py-20 md:py-28'>
       <div className='grid md:grid-cols-2 gap-12 md:gap-16'>
         <div>
-          <h1 className='mb-8'>Experience</h1>
+          <h1 className='mb-8 uppercase'>Experience</h1>
         </div>
         <div className='space-y-12'>
           <div>
