@@ -14,12 +14,13 @@ export default function Hero() {
             alt='Profile picture'
             width={430}
             height={490}
-            className='w-[430px] h-[490px] object-cover grayscale'
+            className='w-[430px] h-[490px] object-cover grayscale mt-42
+            '
             priority
           />
 
           {/* Text overlay positioned at the top center of the image */}
-          <div className='absolute top-8 left-1/2 transform -translate-x-1/2 w-screen max-w-7xl px-4'>
+          <div className='absolute -top-8 left-1/2 transform -translate-x-1/2 w-screen max-w-7xl px-4'>
             <AnimatedHeroTitle title='WEB DEVELOPER' />
           </div>
         </div>
