@@ -1,3 +1,7 @@
+import { GithubIcon } from './ui/GithubIcon';
+import { LinkedInIcon } from './ui/LinkedinIcon';
+import { MailIcon } from './ui/MailIcon';
+
 export default function Footer() {
   return (
     <footer className='bg-white border-t border-black/10 py-12 md:py-16'>
@@ -13,18 +17,21 @@ export default function Footer() {
           <div className='space-y-4'>
             <div className='flex flex-col space-y-2'>
               <a href='mailto:raquelmrsantos@gmail.com' className='font-light'>
+                <MailIcon />
                 Email
               </a>
               <a
                 href='https://www.linkedin.com/in/raquelmrsantos'
                 className='font-light'
               >
+                <LinkedInIcon />
                 LinkedIn
               </a>
               <a
                 href='https://github.com/raquelmrsantos'
                 className='font-light'
               >
+                <GithubIcon />
                 GitHub
               </a>
             </div>

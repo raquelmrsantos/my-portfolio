@@ -29,29 +29,6 @@ const splineSansMono = Spline_Sans_Mono({
   style: 'normal',
 });
 
-const grandSlang = localFont({
-  src: [
-    {
-      path: '../../public/fonts/grandslangroman.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/grandslangroman.woff',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/grandslangroman.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-grand-slang',
-  display: 'swap',
-  fallback: ['serif'],
-});
-
 const maelstrom = localFont({
   src: [
     {
@@ -116,7 +93,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head></head>
       <body
-        className={`${stintUltraExpanded.variable} ${grandSlang.variable} ${maelstrom.variable} ${sofiaSansCondensed.variable} ${splineSansMono.variable} antialiased`}
+        className={`${stintUltraExpanded.variable} ${maelstrom.variable} ${sofiaSansCondensed.variable} ${splineSansMono.variable} antialiased`}
         suppressHydrationWarning
       >
         {children}
