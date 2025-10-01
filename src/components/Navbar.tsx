@@ -43,18 +43,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='fixed top-0 left-0 right-0 z-50 mix-blend-difference'>
-        <div className='mx-auto px-4 md:px-8 lg:px-16'>
-          <div className='flex justify-between items-center h-16 md:h-20'>
+       <nav className='fixed top-0 left-0 w-full z-50 mix-blend-difference py-[25px] lg:py-[37px] pointer-events-none'>
+        <div className='mx-auto px-4 md:px-8 lg:px-16 pointer-events-auto'>
+          <div className='flex justify-between items-center'>
             <button
               onClick={() => handleNavClick('#home')}
-              className='cursor-pointer font-bold uppercase leading-[0.7] text-[8vw] md:text-[6vw] lg:text-[4vw] xl:text-[3vw] 2xl:text-[2.5rem] overflow-hidden text-white'
-              style={{
-                fontFamily: 'Sofia Sans Condensed, sans-serif',
-                letterSpacing: '-0.1em',
-                fontWeight: 700,
-                maxWidth: '50vw',
-              }}
+              className='cursor-pointer font-bold uppercase leading-[0.7] font-sofia-sans-condensed overflow-hidden relative z-[101] text-2xl lg:text-[40px] tracking-[-1px] lg:tracking-[-3px] w-[90px] lg:w-[135px] text-white'
             >
               Raquel Santos
             </button>
@@ -80,7 +74,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className='md:hidden'>
+            <div className='md:hidden relative z-[101]'>
               <button
                 onClick={toggleMobileMenu}
                 className='hamburger'
