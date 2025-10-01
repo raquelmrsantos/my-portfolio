@@ -1,10 +1,13 @@
 import { GithubIcon } from './ui/GithubIcon';
 import { LinkedInIcon } from './ui/LinkedinIcon';
 import { MailIcon } from './ui/MailIcon';
+import AnimatedFooterTitle from '@/components/AnimatedFooterTitle';
 
 export default function Footer() {
   return (
     <footer className='bg-white border-t border-black/10 py-12 md:py-16'>
+      <AnimatedFooterTitle title='Raquel Santos' />
+
       <div className='max-w-6xl mx-auto px-4 md:px-8 lg:px-16'>
         <div className='grid md:grid-cols-2 gap-8 items-center'>
           <div>

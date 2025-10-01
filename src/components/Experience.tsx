@@ -3,11 +3,13 @@ import Section from './Section';
 export default function Experience() {
   return (
     <Section className='py-20 md:py-28'>
-      <div className='grid md:grid-cols-2 gap-12 md:gap-16'>
+      <div className='space-y-12'>
         <div>
-          <h1 className='mb-8 uppercase'>Experience</h1>
+          <h1 className='mb-8 uppercase text-9xl font-bold font-sofia-sans-condensed'>
+            Experience
+          </h1>
         </div>
-        <div className='space-y-12'>
+        <div className='space-y-12 font-spline-sans-mono uppercase'>
           <div>
             <h2 className='text-2xl font-light mb-2'>Present Technologies</h2>
             <h3 className='text-xl font-normal mb-1'>

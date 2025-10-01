@@ -10,11 +10,45 @@ export default function ConnectForm() {
     email: '',
     message: '',
   });
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setStatus('success');
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        message: '',
+      });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('error');
+      setErrorMessage('Failed to send message. Please try again.');
+    }
   };
 
   const handleChange = (
@@ -53,7 +87,8 @@ export default function ConnectForm() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light'
+                disabled={status === 'loading'}
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50'
               />
             </div>
 
@@ -71,7 +106,8 @@ export default function ConnectForm() {
                 name='phone'
                 value={formData.phone}
                 onChange={handleChange}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light'
+                disabled={status === 'loading'}
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50'
               />
             </div>
 
@@ -90,7 +126,8 @@ export default function ConnectForm() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light'
+                disabled={status === 'loading'}
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50'
               />
             </div>
 
@@ -108,17 +145,31 @@ export default function ConnectForm() {
                 rows={6}
                 value={formData.message}
                 onChange={handleChange}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors resize-none font-light'
+                disabled={status === 'loading'}
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors resize-none font-light disabled:opacity-50'
               />
             </div>
+
+            {/* Status Messages */}
+            {status === 'success' && (
+              <div className='text-center text-green-600 text-sm'>
+                Message sent successfully! I&apos;ll get back to you soon.
+              </div>
+            )}
+            {status === 'error' && (
+              <div className='text-center text-red-600 text-sm'>
+                {errorMessage}
+              </div>
+            )}
 
             {/* Submit Button */}
             <div className='flex justify-center pt-4'>
               <button
                 type='submit'
-                className='cursor-pointer px-12 py-4 border border-black uppercase tracking-wide text-sm font-light hover:bg-black hover:text-white transition-all duration-300'
+                disabled={status === 'loading'}
+                className='cursor-pointer px-12 py-4 border border-black uppercase tracking-wide text-sm font-light hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
               >
-                Discuss the project
+                {status === 'loading' ? 'Sending...' : 'Discuss the project'}
               </button>
             </div>
           </div>
