@@ -27,7 +27,7 @@ export default function Experience() {
                 <p className='font-light mb-4 leading-relaxed'>
                   Front-end development for multiple high-end e-commerce
                   websites, delivering premium shopping experiences for luxury
-                  brands.
+                  brands:
                 </p>
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-2 text-sm font-light opacity-80'>
                   <span>Reebok</span>

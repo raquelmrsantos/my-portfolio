@@ -14,26 +14,32 @@ export default function Contact() {
               Available for freelance projects and full-time opportunities.
             </p>
           </div>
-
           <div className='space-y-4'>
             <div className='flex flex-col space-y-2'>
-              <a href='mailto:raquelmrsantos@gmail.com' className='font-light'>
-                <MailIcon /> [ Email ]
+              <a
+                href='mailto:raquelmrsantos@gmail.com'
+                className='font-light flex items-center gap-2'
+              >
+                <MailIcon /> <span>[ Email ]</span>
               </a>
               <a
                 href='https://www.linkedin.com/in/raquelmrsantos'
-                className='font-light'
+                className='font-light flex items-center gap-2'
               >
-                <LinkedInIcon /> [ LinkedIn ]
+                <LinkedInIcon /> <span>[ LinkedIn ]</span>
               </a>
               <a
                 href='https://github.com/raquelmrsantos'
-                className='font-light'
+                className='font-light flex items-center gap-2'
               >
-                <GithubIcon /> [ GitHub ]
+                <GithubIcon /> <span>[ GitHub ]</span>
               </a>
-              <a href='/raquel-santos-cv.pdf' download className='font-light'>
-                <DownloadIcon /> [ Download CV ]
+              <a
+                href='/raquel-santos-cv.pdf'
+                download
+                className='font-light flex items-center gap-2'
+              >
+                <DownloadIcon /> <span>[ Download CV ]</span>
               </a>
             </div>
           </div>
