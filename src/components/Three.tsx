@@ -139,14 +139,43 @@ const Three = ({ children }: ThreeProps) => {
     };
   }, []);
 
-if (isLoading) {
+  if (isLoading) {
     return (
-      <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', backgroundColor: '#e8e8e8' }}>
+      <div
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100vh',
+          overflow: 'hidden',
+          backgroundColor: '#e8e8e8',
+        }}
+      >
         <div ref={containerRef} style={{ opacity: 0.15 }}></div>
-        <div className='font-spline-sans-mono uppercase text-center flex flex-col items-center justify-center h-full pointer-events-none absolute inset-0' style={{ zIndex: 10 }}>
-          <div className='text-2xl mb-4 text-black' style={{ textShadow: '0 0 10px rgba(255,255,255,0.8)' }}>Loading</div>
-          <div className='text-xl text-black' style={{ textShadow: '0 0 10px rgba(255,255,255,0.8)' }}>{progress}%</div>
-          <div className='text-sm mt-8 text-black' style={{ opacity: 0.7, textShadow: '0 0 10px rgba(255,255,255,0.8)' }}>[ UNDER CONSTRUCTION ]</div>
+        <div
+          className='font-spline-sans-mono uppercase text-center flex flex-col items-center justify-center h-full pointer-events-none absolute inset-0'
+          style={{ zIndex: 10 }}
+        >
+          <div
+            className='text-2xl mb-4 text-black'
+            style={{ textShadow: '0 0 10px rgba(255,255,255,0.8)' }}
+          >
+            Loading
+          </div>
+          <div
+            className='text-xl text-black'
+            style={{ textShadow: '0 0 10px rgba(255,255,255,0.8)' }}
+          >
+            {progress}%
+          </div>
+          <div
+            className='text-sm mt-8 text-black'
+            style={{
+              opacity: 0.7,
+              textShadow: '0 0 10px rgba(255,255,255,0.8)',
+            }}
+          >
+            [ UNDER CONSTRUCTION ]
+          </div>
         </div>
       </div>
     );

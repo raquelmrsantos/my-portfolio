@@ -41,9 +41,9 @@ export default function Experience() {
                   <span>Thom Browne</span>
                 </div>
                 <p className='font-light mt-4 leading-relaxed'>
-                    Front-end development of a specialized internal tool, designed for in-store sales
-                  assistants across the YNAP Group, enhancing retail workflows
-                  and customer service.
+                  Front-end development of a specialized internal tool, designed
+                  for in-store sales assistants across the YNAP Group, enhancing
+                  retail workflows and customer service.
                 </p>
               </div>
 

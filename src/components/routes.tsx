@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     if (!name || !email) {
       return NextResponse.json(
         { error: 'Name and email are required' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -34,13 +34,13 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(
       { message: 'Email sent successfully', data },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
       { error: 'Failed to send email' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <>
-       <nav className='fixed top-0 left-0 w-full z-50 mix-blend-difference py-[25px] lg:py-[37px] pointer-events-none'>
+      <nav className='fixed top-0 left-0 w-full z-50 mix-blend-difference py-[25px] lg:py-[37px] pointer-events-none'>
         <div className='mx-auto px-4 md:px-8 lg:px-16 pointer-events-auto'>
           <div className='flex justify-between items-center'>
             <button
@@ -54,12 +54,12 @@ export default function Navbar() {
             </button>
 
             {/* Desktop Navigation */}
-            <div className='hidden md:flex space-x-8'>
+            <div className='hidden md:flex space-x-8 font-spline-sans-mono'>
               {navItems.map(item => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className='cursor-pointer text-sm font-spline-sans-mono tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
+                  className='cursor-pointer text-sm tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
                 >
                   {item.name}
                 </button>
