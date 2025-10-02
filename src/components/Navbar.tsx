@@ -59,7 +59,7 @@ export default function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className='cursor-pointer text-sm font-light tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
+                  className='cursor-pointer text-sm font-spline-sans-mono tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
                 >
                   {item.name}
                 </button>
@@ -67,7 +67,7 @@ export default function Navbar() {
             </div>
 
             <div
-              className='hidden md:block text-sm font-light tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
+              className='hidden md:block text-sm tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
               onClick={() => handleNavClick('#contact')}
             >
               Contact me
