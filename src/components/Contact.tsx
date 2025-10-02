@@ -15,7 +15,7 @@ export default function Contact() {
             </p>
           </div>
           <div className='space-y-4'>
-            <div className='flex flex-col space-y-2'>
+            <div className='flex flex-col space-y-2 cursor pointer'>
               <a
                 href='mailto:raquelmrsantos@gmail.com'
                 className='font-light flex items-center gap-2'
