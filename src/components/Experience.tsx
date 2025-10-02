@@ -36,11 +36,12 @@ export default function Experience() {
                   <span>JW Anderson</span>
                   <span>Stadium Goods</span>
                   <span>Mackintosh</span>
-                  <span>N°21</span>
                   <span>Browns</span>
+                  <span>N°21</span>
+                  <span>Thom Browne</span>
                 </div>
                 <p className='font-light mt-4 leading-relaxed'>
-                  CRHub – A specialized tool designed for in-store sales
+                    Front-end development of a specialized internal tool, designed for in-store sales
                   assistants across the YNAP Group, enhancing retail workflows
                   and customer service.
                 </p>

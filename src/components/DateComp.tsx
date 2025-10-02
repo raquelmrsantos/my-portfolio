@@ -1,9 +1,11 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { UserPenIcon, UserPenHandle } from './ui/UserPenIcon';
 
 export default function DateComp() {
   const [day, setDay] = useState(0);
   const [monthIndex, setMonthIndex] = useState(0);
+  const iconRef = useRef<UserPenHandle>(null);
 
   useEffect(() => {
     const today = new Date();
@@ -36,6 +38,14 @@ export default function DateComp() {
     };
   }, []);
 
+  const handleMouseEnter = () => {
+    iconRef.current?.startAnimation();
+  };
+
+  const handleMouseLeave = () => {
+    iconRef.current?.stopAnimation();
+  };
+
   const months = [
     'jan',
     'feb',
@@ -54,7 +64,11 @@ export default function DateComp() {
   return (
     <div className='flex justify-end md:p-12'>
       {/* Date pills and hover group */}
-      <div className='flex items-center group relative'>
+      <div
+        className='flex items-center group relative'
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {/* Day pill */}
         <div className='relative'>
           <div className='rounded-full px-5 py-1 flex items-center justify-center min-w-[60px]'>
@@ -77,7 +91,9 @@ export default function DateComp() {
         {/* Disclaimer: only visible on hover */}
         <div className='absolute left-0 top-full mt-2 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200  pointer-events-none'>
           <div className='flex items-start gap-2'>
-            <span className='text-lg'>☹</span>
+            <span className='text-lg'>
+              <UserPenIcon ref={iconRef} />
+            </span>
             <div className='text-sm leading-relaxed font-text'>
               <strong>Availability shifts with projects.</strong>
               <br />

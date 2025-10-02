@@ -152,12 +152,12 @@ export default function ConnectForm() {
 
             {/* Status Messages */}
             {status === 'success' && (
-              <div className='text-center text-green-600 text-sm'>
+              <div className='text-center text-black text-sm'>
                 Message sent successfully! I&apos;ll get back to you soon.
               </div>
             )}
             {status === 'error' && (
-              <div className='text-center text-red-600 text-sm'>
+              <div className='text-center text-red-700 text-sm'>
                 {errorMessage}
               </div>
             )}
