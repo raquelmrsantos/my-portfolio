@@ -65,7 +65,7 @@ export default function DateComp() {
     <div className='flex justify-end md:p-12'>
       {/* Date pills and hover group */}
       <div
-        className='flex items-center group relative'
+        className='flex items-center group relative cursor-pointer'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

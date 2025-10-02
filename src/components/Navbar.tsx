@@ -67,7 +67,7 @@ export default function Navbar() {
             </div>
 
             <div
-              className='hidden md:block text-sm tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
+              className='hidden md:block text-sm font-spline-sans-mono ©tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
               onClick={() => handleNavClick('#contact')}
             >
               Contact me
