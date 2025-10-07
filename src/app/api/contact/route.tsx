@@ -1,24 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
 
-// Validate environment variables
-const accessKey = process.env.AWS_SES_ACCESS_KEY_ID;
-const secretKey = process.env.AWS_SES_SECRET_ACCESS_KEY;
-
-if (!accessKey || !secretKey) {
-  throw new Error('AWS SES credentials are not set in environment variables.');
-}
-
-// Initialize SES client
-const sesClient = new SESv2Client({
-  region: 'eu-west-3',
-  credentials: {
-    accessKeyId: accessKey,
-    secretAccessKey: secretKey,
-  },
-});
-
 export async function POST(req: NextRequest) {
+  // Validate environment variables at runtime
+  const accessKey = process.env.AWS_SES_ACCESS_KEY_ID;
+  const secretKey = process.env.AWS_SES_SECRET_ACCESS_KEY;
+
+  if (!accessKey || !secretKey) {
+    console.error('AWS SES credentials are not set in environment variables.');
+    return NextResponse.json(
+      { error: 'Server configuration error' },
+      { status: 500 }
+    );
+  }
+
+  // Initialize SES client
+  const sesClient = new SESv2Client({
+    region: 'eu-west-3',
+    credentials: {
+      accessKeyId: accessKey,
+      secretAccessKey: secretKey,
+    },
+  });
   try {
     const body = await req.json();
     const { name, email, phone, message } = body;
