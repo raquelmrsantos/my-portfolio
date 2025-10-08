@@ -88,7 +88,7 @@ export default function ConnectForm() {
                 value={formData.name}
                 onChange={handleChange}
                 disabled={status === 'loading'}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50 uppercase'
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50'
               />
             </div>
 
@@ -146,7 +146,7 @@ export default function ConnectForm() {
                 value={formData.message}
                 onChange={handleChange}
                 disabled={status === 'loading'}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors resize-none font-light disabled:opacity-50 uppercase'
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors resize-none font-light disabled:opacity-50'
               />
             </div>
 

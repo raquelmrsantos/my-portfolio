@@ -1,7 +1,8 @@
 'use client';
 
-import { ArrowUpRight } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import AnimatedText from './AnimatedText';
 
 const navItems = [
   { name: '[ Home ]', href: '#home' },
@@ -60,15 +61,15 @@ export default function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className='cursor-pointer text-sm tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
+                  className='cursor-pointer text-base tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
                 >
-                  {item.name}
+                  <AnimatedText text={item.name} />
                 </button>
               ))}
             </div>
 
             <div
-              className='hidden md:block text-sm font-spline-sans-mono ©tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
+              className='hidden md:block text-base font-spline-sans-mono ©tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
               onClick={() => handleNavClick('#contact')}
             >
               Contact me <ArrowUpRight className='inline' />

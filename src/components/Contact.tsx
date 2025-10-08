@@ -1,3 +1,4 @@
+import AnimatedContactText from './AnimatedContactText';
 import { DownloadIcon } from './ui/DownloadIcon';
 import { GithubIcon } from './ui/GithubIcon';
 import { LinkedInIcon } from './ui/LinkedinIcon';
@@ -20,26 +21,26 @@ export default function Contact() {
                 href='mailto:raquelmrsantos@gmail.com'
                 className='font-light flex items-center gap-2'
               >
-                <MailIcon /> <span>[ Email ]</span>
+                <MailIcon /> <AnimatedContactText text='[ Email ]' />
               </a>
               <a
                 href='https://www.linkedin.com/in/raquelmrsantos'
                 className='font-light flex items-center gap-2'
               >
-                <LinkedInIcon /> <span>[ LinkedIn ]</span>
+                <LinkedInIcon /> <AnimatedContactText text='[ LinkedIn ]' />
               </a>
               <a
                 href='https://github.com/raquelmrsantos'
                 className='font-light flex items-center gap-2'
               >
-                <GithubIcon /> <span>[ GitHub ]</span>
+                <GithubIcon /> <AnimatedContactText text='[ GitHub ]' />
               </a>
               <a
                 href='/raquel-santos-cv.pdf'
                 download
                 className='font-light flex items-center gap-2'
               >
-                <DownloadIcon /> <span>[ Download CV ]</span>
+                <DownloadIcon /> <AnimatedContactText text='[ Download CV ]' />
               </a>
             </div>
           </div>

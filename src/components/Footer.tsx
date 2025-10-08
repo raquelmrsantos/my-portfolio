@@ -28,14 +28,14 @@ export default function Footer() {
     <footer className='bg-white uppercase'>
       <AnimatedFooterTitle title='Raquel Santos' />
 
-      <div className='flex flex-col md:flex-row justify-between items-center pb-8 gap-4 font-spline-sans-mono mx-3.5'>
+      <div className='flex flex-row justify-between items-start pb-8 gap-4 font-spline-sans-mono mx-3.5'>
         <div className='text-sm font-light opacity-60'>
-          <p>Coimbra, Portugal</p>
-          <p>(GMT+0) {time}</p>
+          <p className='md:inline'>Coimbra, Portugal</p>
+          <p className='md:inline md:before:content-["_•_"]'>(GMT+0) {time}</p>
         </div>
-        <div className='text-sm font-light opacity-60'>
-          <p>© All rights reserved.</p>
-          <p>2025 Raquel Santos.</p>
+        <div className='text-sm font-light opacity-60 text-right'>
+          <p className='md:inline'>© All rights reserved. </p>
+          <p className='md:inline'>2025 Raquel Santos.</p>
         </div>
       </div>
     </footer>

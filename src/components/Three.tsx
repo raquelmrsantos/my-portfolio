@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three/webgpu';
 import { pass } from 'three/tsl';

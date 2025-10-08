@@ -1,13 +1,12 @@
-//import AnimatedTextStroke from './AnimatedTextStroke';
-import { ArrowDownRight } from 'lucide-react';
 import Section from './Section';
+import { ArrowDownRight } from 'lucide-react';
 
 export default function Experience() {
   return (
     <Section className='py-20 md:py-28'>
       <div className='space-y-12'>
         <div>
-            <h1 className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed letter-spacing-[-5px]'>
+          <h1 className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed letter-spacing-[-5px]'>
             Experience
           </h1>
         </div>
