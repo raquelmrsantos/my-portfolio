@@ -1,3 +1,5 @@
+//import AnimatedTextStroke from './AnimatedTextStroke';
+import { ArrowDownRight } from 'lucide-react';
 import Section from './Section';
 
 export default function Experience() {
@@ -5,7 +7,7 @@ export default function Experience() {
     <Section className='py-20 md:py-28'>
       <div className='space-y-12'>
         <div>
-          <h1 className='mb-8 uppercase text-9xl font-bold font-sofia-sans-condensed'>
+            <h1 className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed letter-spacing-[-5px]'>
             Experience
           </h1>
         </div>
@@ -45,6 +47,13 @@ export default function Experience() {
                   for in-store sales assistants across the YNAP Group, enhancing
                   retail workflows and customer service.
                 </p>
+
+                <p className='font-light mt-4'>
+                  <ArrowDownRight className='inline text-gray-500' />{' '}
+                  JavaScript, React, TypeScript, Cypress, Jest, Testing Library,
+                  Postman, Oracle Responsys (email integration), SEO
+                  optimization, Figma, Storybook, GitLab, Jira, Jenkins
+                </p>
               </div>
 
               <div>
@@ -52,6 +61,12 @@ export default function Experience() {
                 <p className='font-light leading-relaxed'>
                   Front-end development for internal platforms focused on
                   improving employee workflows and operational efficiency.
+                </p>
+
+                <p className='font-light mt-4'>
+                  <ArrowDownRight className='inline text-gray-500' />{' '}
+                  JavaScript, Angular, TypeScript, Jest, Figma, Jira, Azure
+                  DevOps, Jenkins
                 </p>
               </div>
             </div>

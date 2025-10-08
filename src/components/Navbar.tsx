@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowUpRight } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 
 const navItems = [
@@ -70,7 +71,7 @@ export default function Navbar() {
               className='hidden md:block text-sm font-spline-sans-mono ©tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
               onClick={() => handleNavClick('#contact')}
             >
-              Contact me
+              Contact me <ArrowUpRight className='inline' />
             </div>
 
             {/* Mobile menu button */}

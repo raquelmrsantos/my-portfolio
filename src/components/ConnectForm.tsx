@@ -69,7 +69,7 @@ export default function ConnectForm() {
 
         <form
           onSubmit={handleSubmit}
-          className='w-full max-w-2xl font-spline-sans-mono'
+          className='w-full max-w-2xl font-spline-sans-mono uppercase'
         >
           <div className='space-y-8'>
             {/* Name Field */}
@@ -88,7 +88,7 @@ export default function ConnectForm() {
                 value={formData.name}
                 onChange={handleChange}
                 disabled={status === 'loading'}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50'
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50 uppercase'
               />
             </div>
 
@@ -146,7 +146,7 @@ export default function ConnectForm() {
                 value={formData.message}
                 onChange={handleChange}
                 disabled={status === 'loading'}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors resize-none font-light disabled:opacity-50'
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors resize-none font-light disabled:opacity-50 uppercase'
               />
             </div>
 
