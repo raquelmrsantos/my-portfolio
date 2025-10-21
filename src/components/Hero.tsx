@@ -14,8 +14,7 @@ export default function Hero() {
             alt='Profile picture'
             width={430}
             height={490}
-            className='w-[430px] h-[490px] object-cover grayscale mt-42
-            '
+            className='w-[200px] h-[228px] sm:w-[350px] sm:h-[400px] md:w-[430px] md:h-[490px] object-cover grayscale mt-8 sm:mt-20 md:mt-42'
             priority
           />
 

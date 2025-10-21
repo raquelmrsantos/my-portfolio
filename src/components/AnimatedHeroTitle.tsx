@@ -54,7 +54,8 @@ const AnimatedHeroTitle = ({ title }: { title: string }) => {
   return (
     <h1
       ref={titleRef}
-      className='lg:text-[13rem] md:text-[8rem] sm:text-[6rem] text-[4rem] font-bold font-sofia-sans-condensed uppercase text-center text-black overflow-hidden'
+      className='font-bold font-sofia-sans-condensed uppercase text-center text-black whitespace-nowrap'
+      style={{ fontSize: 'clamp(2rem, 16vw, 13rem)' }}
     >
       {title}
     </h1>
