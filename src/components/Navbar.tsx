@@ -75,16 +75,16 @@ export default function Navbar() {
               Contact me <ArrowUpRight className='inline' />
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu button - Changed to text */}
             <div className='md:hidden relative z-[101]'>
               <button
                 onClick={toggleMobileMenu}
-                className='hamburger'
+                className={`font-spline-sans-mono text-base tracking-wide uppercase hover:opacity-70 transition-all ${
+                  isMobileMenuOpen ? 'text-black' : 'text-white mix-blend-difference'
+                }`}
                 aria-label='Toggle menu'
               >
-                <span className={isMobileMenuOpen ? 'open' : ''}></span>
-                <span className={isMobileMenuOpen ? 'open' : ''}></span>
-                <span className={isMobileMenuOpen ? 'open' : ''}></span>
+                [ MENU ]
               </button>
             </div>
           </div>
@@ -93,14 +93,24 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
-        {navItems.map((item, index) => (
+        {isMobileMenuOpen && (
+          <button
+            onClick={toggleMobileMenu}
+            className='fixed top-[25px] right-4 z-[102] text-black font-spline-sans-mono text-base tracking-wide uppercase hover:opacity-70 transition-opacity'
+            aria-label='Close menu'
+          >
+            [ CLOSE ]
+          </button>
+        )}
+
+       {navItems.map((item, index) => (
           <button
             key={item.name}
             onClick={() => handleNavClick(item.href)}
-            className='mobile-menu-item elegant-link'
+            className='mobile-menu-item font-sofia-sans-condensed font-bold'
             style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
           >
-            {item.name}
+            {item.name.replace(/\[|\]/g, '').trim()}
           </button>
         ))}
       </div>

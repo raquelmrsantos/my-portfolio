@@ -14,7 +14,12 @@ export default function Hero() {
             alt='Profile picture'
             width={430}
             height={490}
-            className='w-[200px] h-[228px] sm:w-[350px] sm:h-[400px] md:w-[430px] md:h-[490px] object-cover grayscale mt-8 sm:mt-20 md:mt-42'
+            className='object-cover grayscale'
+            style={{
+              width: 'clamp(200px, 40vw, 430px)',
+              height: 'clamp(228px, 45.6vw, 490px)',
+              marginTop: 'clamp(2rem, 8vw, 10.5rem)',
+            }}
             priority
           />
 
@@ -29,10 +34,7 @@ export default function Hero() {
             className='font-spline-sans-mono text-center uppercase font-light'
             style={{
               fontSize: '15px',
-              //fontWeight: 300,
               letterSpacing: '-2%',
-              // margin: '45rem auto 20rem',
-              //width: '450rem',
               lineHeight: '99%',
             }}
           >
