@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className='flex justify-between items-center'>
             <button
               onClick={() => handleNavClick('#home')}
-              className='cursor-pointer font-bold uppercase leading-[0.7] font-sofia-sans-condensed overflow-hidden relative z-[101] text-2xl lg:text-[40px] tracking-[-1px] lg:tracking-[-3px] w-[90px] lg:w-[135px] text-white'
+              className='cursor-pointer font-bold uppercase pt-[2px] leading-[0.7] font-sofia-sans-condensed overflow-visible relative z-[101] text-2xl lg:text-[40px] tracking-[-1px] lg:tracking-[-3px] w-[90px] lg:w-[135px] text-white'
             >
               Raquel Santos
             </button>
