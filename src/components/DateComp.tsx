@@ -89,7 +89,7 @@ export default function DateComp() {
           </span>
         </div>
         {/* Disclaimer: only visible on hover */}
-        <div className='absolute left-0 top-full mt-2 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200  pointer-events-none'>
+        <div className='absolute left-0 top-full mt-2 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none'>
           <div className='flex items-start gap-2'>
             <span className='text-lg'>
               <UserPenIcon ref={iconRef} />

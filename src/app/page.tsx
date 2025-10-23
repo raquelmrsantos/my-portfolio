@@ -5,13 +5,13 @@ import Experience from '@/components/Experience';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
-import Three from '@/components/Three';
+//import LoadingAnimation from '@/components/LoadingAnimation';
 import ConnectForm from '@/components/ConnectForm';
 
 export default function Home() {
   return (
     <>
-      <Three >
+      {/*     <LoadingAnimation> */}
       <main>
         <Navbar />
 
@@ -37,7 +37,7 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
-      </Three> 
+      {/*  </LoadingAnimation> */}
     </>
   );
 }

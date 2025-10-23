@@ -34,7 +34,8 @@ const AnimatedFooterTitle = ({ title }: { title: string }) => {
       },
       scrollTrigger: {
         trigger: currentRef,
-        start: 'top 70%',
+        // trigger when title top reaches bottom of viewport to be reliable on mobile
+        start: 'top bottom',
         end: 'bottom 20%',
         toggleActions: 'play none none reverse',
       },

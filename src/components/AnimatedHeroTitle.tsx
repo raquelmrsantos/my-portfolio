@@ -34,7 +34,8 @@ const AnimatedHeroTitle = ({ title }: { title: string }) => {
       },
       scrollTrigger: {
         trigger: currentRef,
-        start: 'top 70%',
+        // trigger when title enters the bottom of the viewport — more reliable on small screens
+        start: 'top bottom',
         end: 'bottom 20%',
         toggleActions: 'play none none reverse',
       },

@@ -8,7 +8,7 @@ export default function About() {
     <Section className='py-20 md:py-28'>
       <div className='grid md:grid-cols-2 gap-12 md:gap-16 items-start'>
         <div>
-          <h1 className='mb-8 uppercase text-9xl font-bold font-sofia-sans-condensed '>
+          <h1 className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed'>
             About me
           </h1>
         </div>
