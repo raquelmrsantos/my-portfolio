@@ -46,7 +46,7 @@ export default function Navbar() {
   return (
     <>
       <nav className='fixed top-0 left-0 w-full z-50 mix-blend-difference py-[25px] lg:py-[37px] pointer-events-none'>
-        <div className='mx-auto px-4 md:px-8 lg:px-16 pointer-events-auto'>
+        <div className='mx-auto px-4 pointer-events-auto'>
           <div className='flex justify-between items-center'>
             <button
               onClick={() => handleNavClick('#home')}
