@@ -6,11 +6,11 @@ import { pass } from 'three/tsl';
 import { dotScreen } from 'three/addons/tsl/display/DotScreenNode.js';
 import { rgbShift } from 'three/addons/tsl/display/RGBShiftNode.js';
 
-interface ThreeProps {
+interface LoadingAnimationProps {
   children: React.ReactNode;
 }
 
-const Three = ({ children }: ThreeProps) => {
+const LoadingAnimation = ({ children }: LoadingAnimationProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -183,4 +183,4 @@ const Three = ({ children }: ThreeProps) => {
   }
   return <>{children}</>;
 };
-export default Three;
+export default LoadingAnimation;
