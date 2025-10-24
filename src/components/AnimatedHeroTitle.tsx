@@ -55,10 +55,13 @@ const AnimatedHeroTitle = ({ title }: { title: string }) => {
   return (
     <h1
       ref={titleRef}
-      className='font-bold font-sofia-sans-condensed uppercase text-center text-black whitespace-nowrap tracking-[-3px]'
-      style={{ fontSize: 'clamp(2rem, 16vw, 13rem)' }}
+      className='font-bold font-sofia-sans-condensed uppercase text-center text-black tracking-[-8px] leading-[0.8] mt-0 sm:mt-8 md:mt-10 lg:mt-15 text-[clamp(5.5rem,19vw,15rem)]'
+      style={{
+        letterSpacing: 'clamp(-2rem, -1.5vw, 0.05rem)',
+      }}
     >
-      {title}
+      <span className='lg:inline block'>web</span>{' '}
+      <span className='lg:inline block'>developer</span>
     </h1>
   );
 };
