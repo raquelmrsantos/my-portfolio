@@ -14,11 +14,10 @@ export default function Hero() {
             alt='Profile picture'
             width={430}
             height={490}
-            className='object-cover grayscale'
+            className='object-cover grayscale mt-40 sm:mt-65 md:mt-85 lg:mt-44'
             style={{
               width: 'clamp(200px, 40vw, 430px)',
-              height: 'clamp(228px, 45.6vw, 490px)',
-              marginTop: 'clamp(2rem, 8vw, 10.5rem)',
+              height: 'clamp(228px, 45.6vw, 490px)'
             }}
             priority
           />

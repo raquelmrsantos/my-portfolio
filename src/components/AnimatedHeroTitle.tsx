@@ -55,7 +55,7 @@ const AnimatedHeroTitle = ({ title }: { title: string }) => {
   return (
     <h1
       ref={titleRef}
-      className='font-bold font-sofia-sans-condensed uppercase text-center text-black tracking-[-8px] leading-[0.8] mt-0 sm:mt-8 md:mt-10 lg:mt-15 text-[clamp(5.5rem,19vw,15rem)]'
+      className='font-bold font-sofia-sans-condensed uppercase text-center text-black tracking-[-8px] leading-[0.8] mt-6 sm:mt-8 md:mt-10 lg:mt-15 text-[clamp(5.5rem,25vw,15rem)]'
       style={{
         letterSpacing: 'clamp(-2rem, -1.5vw, 0.05rem)',
       }}
