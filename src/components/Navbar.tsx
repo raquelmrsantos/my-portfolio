@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import AnimatedText from './AnimatedText';
+import MobileMenu from './MobileMenu';
 
 const navItems = [
   { name: '[ Home ]', href: '#home' },
@@ -75,45 +76,40 @@ export default function Navbar() {
               Contact me <ArrowUpRight className='inline' />
             </div>
 
-            {/* Mobile menu button - Changed to text */}
+            {/* Mobile menu button */}
             <div className='md:hidden relative z-[101]'>
               <button
                 onClick={toggleMobileMenu}
-                className={`font-spline-sans-mono text-base tracking-wide uppercase hover:opacity-70 transition-all ${
-                  isMobileMenuOpen ? 'text-black' : 'text-white mix-blend-difference'
-                }`}
+                className='font-spline-sans-mono text-base tracking-wide uppercase hover:opacity-70 transition-all'
                 aria-label='Toggle menu'
               >
-                [ MENU ]
+                <span className='whitespace-nowrap'>
+                  <span
+                    className={`absolute right-0 text-white mix-blend-difference transition-opacity ${
+                      isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    [CLOSE]
+                  </span>
+                  <span
+                    className={`text-white mix-blend-difference transition-opacity ${
+                      isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  >
+                    [MENU]
+                  </span>
+                </span>
               </button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
-        {isMobileMenuOpen && (
-          <button
-            onClick={toggleMobileMenu}
-            className='fixed top-[25px] right-4 z-[102] text-black font-spline-sans-mono text-base tracking-wide uppercase hover:opacity-70 transition-opacity'
-            aria-label='Close menu'
-          >
-            [ CLOSE ]
-          </button>
-        )}
-
-       {navItems.map((item, index) => (
-          <button
-            key={item.name}
-            onClick={() => handleNavClick(item.href)}
-            className='mobile-menu-item font-sofia-sans-condensed font-bold'
-            style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
-          >
-            {item.name.replace(/\[|\]/g, '').trim()}
-          </button>
-        ))}
-      </div>
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        navItems={navItems}
+        onNavClick={handleNavClick}
+      />
     </>
   );
 }
