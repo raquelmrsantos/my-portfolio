@@ -51,7 +51,7 @@ export default function Navbar() {
           <div className='flex justify-between items-center'>
             <button
               onClick={() => handleNavClick('#home')}
-              className='cursor-pointer font-bold uppercase pt-[2px] leading-[0.7] font-sofia-sans-condensed overflow-visible relative z-[101] text-2xl lg:text-[40px] tracking-[-1px] lg:tracking-[-3px] w-[90px] lg:w-[135px] text-white'
+              className='cursor-pointer font-bold uppercase pt-[2px] leading-[0.7] font-sofia-sans-condensed overflow-visible relative z-[101] text-2xl lg:text-[40px] tracking-[-1px] lg:tracking-[-3px] w-[90px] lg:w-[135px] text-white cursor-target'
             >
               Raquel Santos
             </button>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className='cursor-pointer text-base tracking-wide uppercase text-white hover:opacity-70 transition-opacity'
+                  className='cursor-pointer text-base tracking-wide uppercase text-white hover:opacity-70 transition-opacity cursor-target'
                 >
                   <AnimatedText text={item.name} />
                 </button>
@@ -70,7 +70,7 @@ export default function Navbar() {
             </div>
 
             <div
-              className='hidden md:block text-base font-spline-sans-mono ©tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity'
+              className='hidden md:block text-base font-spline-sans-mono ©tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity cursor-target'
               onClick={() => handleNavClick('#contact')}
             >
               Contact me <ArrowUpRight className='inline' />

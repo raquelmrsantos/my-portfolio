@@ -7,11 +7,14 @@ import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import LoadingAnimation from '@/components/LoadingAnimation';
 import ConnectForm from '@/components/ConnectForm';
+import TargetCursor from '@/components/TargetCursor';
 
 export default function Home() {
   return (
     <>
       <LoadingAnimation>
+        <TargetCursor spinDuration={2} hideDefaultCursor={true} />
+
         <main>
           <Navbar />
 
@@ -35,6 +38,7 @@ export default function Home() {
             <Contact />
           </section>
         </main>
+
         <Footer />
         <BackToTop />
       </LoadingAnimation>

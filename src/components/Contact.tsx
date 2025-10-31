@@ -21,7 +21,7 @@ export default function Contact() {
                 href='mailto:raquelmrsantos@gmail.com?subject=Hey%20Raquel%2C%20Let%E2%80%99s%20Build%20Something%20Awesome!%20%F0%9F%A4%9D'
                 className='font-light flex items-center gap-2'
               >
-                <MailIcon /> <AnimatedContactText text='[ Email ]' />
+                <MailIcon className='cursor-target'/> <AnimatedContactText text='[ Email ]' />
               </a>
               <a
                 href='https://www.linkedin.com/in/raquelmrsantos'
@@ -29,7 +29,7 @@ export default function Contact() {
                 rel='noopener noreferrer'
                 className='font-light flex items-center gap-2'
               >
-                <LinkedInIcon /> <AnimatedContactText text='[ LinkedIn ]' />
+                <LinkedInIcon  className='cursor-target'/> <AnimatedContactText text='[ LinkedIn ]' />
               </a>
               <a
                 href='https://github.com/raquelmrsantos'
@@ -37,14 +37,14 @@ export default function Contact() {
                 rel='noopener noreferrer'
                 className='font-light flex items-center gap-2'
               >
-                <GithubIcon /> <AnimatedContactText text='[ GitHub ]' />
+                <GithubIcon className='cursor-target'/> <AnimatedContactText text='[ GitHub ]' />
               </a>
               <a
                 href='/raquel-santos-cv.pdf'
                 download
                 className='font-light flex items-center gap-2'
               >
-                <DownloadIcon /> <AnimatedContactText text='[ Download CV ]' />
+                <DownloadIcon className='cursor-target'/> <AnimatedContactText text='[ Download CV ]' />
               </a>
             </div>
           </div>
