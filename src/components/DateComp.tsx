@@ -12,24 +12,22 @@ export default function DateComp() {
     const targetDay = today.getDate();
     const targetMonth = today.getMonth();
 
-    let currentDay = 1;
+    let currentDay = 0;
     const dayInterval = setInterval(() => {
-      if (currentDay < targetDay) {
-        currentDay++;
-        setDay(currentDay);
-      } else {
+      currentDay++;
+      setDay(currentDay);
+      if (currentDay >= targetDay) {
         clearInterval(dayInterval);
       }
     }, 50);
 
     let currentMonth = 0;
     const monthInterval = setInterval(() => {
-      if (currentMonth < targetMonth) {
-        currentMonth++;
-        setMonthIndex(currentMonth);
-      } else {
+      setMonthIndex(currentMonth);
+      if (currentMonth >= targetMonth) {
         clearInterval(monthInterval);
       }
+      currentMonth++;
     }, 150);
 
     return () => {
