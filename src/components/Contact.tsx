@@ -2,6 +2,7 @@
 
 import AnimatedContactText from './AnimatedContactText';
 import BlurText from './BlurText';
+import ScrambledText from './ScrambledText';
 import { DownloadIcon } from './ui/DownloadIcon';
 import { GithubIcon } from './ui/GithubIcon';
 import { LinkedInIcon } from './ui/LinkedinIcon';
@@ -20,9 +21,15 @@ export default function Contact() {
               direction='top'
               className='text-2xl font-light mb-4'
             />
-            <p className='font-light opacity-80 leading-relaxed'>
+            <ScrambledText
+              className='font-light opacity-80 leading-relaxed'
+              radius={60}
+              duration={1.2}
+              speed={0.5}
+              scrambleChars='.:'
+            >
               Available for freelance projects and full-time opportunities.
-            </p>
+            </ScrambledText>
           </div>
           <div className='space-y-4'>
             <div className='flex flex-col space-y-2 cursor pointer'>
