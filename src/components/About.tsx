@@ -2,15 +2,20 @@
 
 import React from 'react';
 import Section from './Section';
+import BlurText from './BlurText';
 
 export default function About() {
   return (
     <Section className='py-20 md:py-28'>
       <div className='grid md:grid-cols-2 gap-12 md:gap-16 items-start'>
         <div>
-          <h1 className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed'>
-            About me
-          </h1>
+          <BlurText
+            text='About me'
+            delay={150}
+            animateBy='words'
+            direction='top'
+            className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed'
+          />
         </div>
         <div className='space-y-6 font-spline-sans-mono text-center uppercase'>
           <p className='text-lg font-light leading-relaxed'>

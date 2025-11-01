@@ -1,3 +1,6 @@
+'use client';
+
+import BlurText from './BlurText';
 import Section from './Section';
 import { ArrowDownRight } from 'lucide-react';
 
@@ -6,9 +9,13 @@ export default function Experience() {
     <Section className='py-20 md:py-28'>
       <div className='space-y-12'>
         <div>
-          <h1 className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed'>
-            Experience
-          </h1>
+          <BlurText
+            text='Experience'
+            delay={150}
+            animateBy='words'
+            direction='top'
+            className='mb-8 uppercase text-7xl md:text-9xl font-bold font-sofia-sans-condensed'
+          />
         </div>
         <div className='space-y-12 font-spline-sans-mono uppercase'>
           <div>

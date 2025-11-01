@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import Section from './Section';
+import BlurText from './BlurText';
 
 export default function ConnectForm() {
   const [formData, setFormData] = useState({
@@ -63,10 +64,13 @@ export default function ConnectForm() {
   return (
     <Section>
       <div className='flex flex-col items-center justify-center min-h-screen px-4'>
-        <h2 className='text-4xl md:text-5xl mb-16 text-center font-sofia-sans-condensed font-bold uppercase'>
-          Let&apos;s get in touch!
-        </h2>
-
+        <BlurText
+          text="Let's get in touch!"
+          delay={150}
+          animateBy='words'
+          direction='top'
+          className='text-5xl md:text-7xl mb-16 text-center font-sofia-sans-condensed font-bold uppercase'
+        />
         <form
           onSubmit={handleSubmit}
           className='w-full max-w-2xl font-spline-sans-mono uppercase'

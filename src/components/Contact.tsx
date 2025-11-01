@@ -1,4 +1,7 @@
+'use client';
+
 import AnimatedContactText from './AnimatedContactText';
+import BlurText from './BlurText';
 import { DownloadIcon } from './ui/DownloadIcon';
 import { GithubIcon } from './ui/GithubIcon';
 import { LinkedInIcon } from './ui/LinkedinIcon';
@@ -10,7 +13,13 @@ export default function Contact() {
       <div className='max-w-6xl mx-auto px-4 md:px-8 lg:px-16 font-spline-sans-mono'>
         <div className='grid md:grid-cols-2 gap-8 items-center'>
           <div>
-            <h3 className='text-2xl font-light mb-4'>Let&apos;s Connect</h3>
+            <BlurText
+              text="Let's Connect"
+              delay={150}
+              animateBy='words'
+              direction='top'
+              className='text-2xl font-light mb-4'
+            />
             <p className='font-light opacity-80 leading-relaxed'>
               Available for freelance projects and full-time opportunities.
             </p>
@@ -21,7 +30,8 @@ export default function Contact() {
                 href='mailto:raquelmrsantos@gmail.com?subject=Hey%20Raquel%2C%20Let%E2%80%99s%20Build%20Something%20Awesome!%20%F0%9F%A4%9D'
                 className='font-light flex items-center gap-2'
               >
-                <MailIcon className='cursor-target'/> <AnimatedContactText text='[ Email ]' />
+                <MailIcon className='cursor-target' />{' '}
+                <AnimatedContactText text='[ Email ]' />
               </a>
               <a
                 href='https://www.linkedin.com/in/raquelmrsantos'
@@ -29,7 +39,8 @@ export default function Contact() {
                 rel='noopener noreferrer'
                 className='font-light flex items-center gap-2'
               >
-                <LinkedInIcon  className='cursor-target'/> <AnimatedContactText text='[ LinkedIn ]' />
+                <LinkedInIcon className='cursor-target' />{' '}
+                <AnimatedContactText text='[ LinkedIn ]' />
               </a>
               <a
                 href='https://github.com/raquelmrsantos'
@@ -37,14 +48,16 @@ export default function Contact() {
                 rel='noopener noreferrer'
                 className='font-light flex items-center gap-2'
               >
-                <GithubIcon className='cursor-target'/> <AnimatedContactText text='[ GitHub ]' />
+                <GithubIcon className='cursor-target' />{' '}
+                <AnimatedContactText text='[ GitHub ]' />
               </a>
               <a
                 href='/raquel-santos-cv.pdf'
                 download
                 className='font-light flex items-center gap-2'
               >
-                <DownloadIcon className='cursor-target'/> <AnimatedContactText text='[ Download CV ]' />
+                <DownloadIcon className='cursor-target' />{' '}
+                <AnimatedContactText text='[ Download CV ]' />
               </a>
             </div>
           </div>
