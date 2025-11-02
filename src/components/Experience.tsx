@@ -1,8 +1,36 @@
 'use client';
 
 import BlurText from './BlurText';
+import LogoLoop from './LogoLoop';
 import Section from './Section';
 import { ArrowDownRight } from 'lucide-react';
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiGithub,
+  SiGitlab,
+  SiCypress,
+} from 'react-icons/si';
+
+const techLogos = [
+  { node: <SiReact />, title: 'React', href: 'https://react.dev' },
+  { node: <SiNextdotjs />, title: 'Next.js', href: 'https://nextjs.org' },
+  {
+    node: <SiTypescript />,
+    title: 'TypeScript',
+    href: 'https://www.typescriptlang.org',
+  },
+  {
+    node: <SiTailwindcss />,
+    title: 'Tailwind CSS',
+    href: 'https://tailwindcss.com',
+  },
+  { node: <SiGithub />, title: 'GitHub', href: 'https://github.com' },
+  { node: <SiGitlab />, title: 'GitLab', href: 'https://gitlab.com' },
+  { node: <SiCypress />, title: 'Cypress', href: 'https://www.cypress.io' },
+];
 
 export default function Experience() {
   return (
@@ -77,6 +105,22 @@ export default function Experience() {
               </div>
             </div>
           </div>
+        </div>
+        <div
+          style={{ height: '200px', position: 'relative', overflow: 'hidden' }}
+        >
+          <LogoLoop
+            logos={techLogos}
+            speed={120}
+            direction='left'
+            logoHeight={48}
+            gap={40}
+            pauseOnHover
+            scaleOnHover
+            fadeOut
+            fadeOutColor='#ffffff'
+            ariaLabel='Technology partners'
+          />
         </div>
       </div>
     </Section>
