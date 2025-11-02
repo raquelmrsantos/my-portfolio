@@ -171,7 +171,7 @@ export default function ConnectForm() {
               <button
                 type='submit'
                 disabled={status === 'loading'}
-                className='cursor-pointer px-12 py-4 border border-black uppercase tracking-wide text-sm font-light hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
+                className='cursor-pointer cursor-target px-12 py-4 border border-black uppercase tracking-wide text-sm font-light hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
               >
                 {status === 'loading' ? 'Sending...' : 'Discuss the project'}
               </button>
