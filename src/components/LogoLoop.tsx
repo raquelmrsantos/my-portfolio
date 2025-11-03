@@ -280,6 +280,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             )}
             key={key}
             role='listitem'
+            title={item.title}
           >
             {inner}
           </li>

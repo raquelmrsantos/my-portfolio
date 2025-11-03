@@ -27,9 +27,9 @@ const techLogos = [
     title: 'Tailwind CSS',
     href: 'https://tailwindcss.com',
   },
+  { node: <SiCypress />, title: 'Cypress', href: 'https://www.cypress.io' },
   { node: <SiGithub />, title: 'GitHub', href: 'https://github.com' },
   { node: <SiGitlab />, title: 'GitLab', href: 'https://gitlab.com' },
-  { node: <SiCypress />, title: 'Cypress', href: 'https://www.cypress.io' },
 ];
 
 export default function Experience() {
@@ -119,7 +119,7 @@ export default function Experience() {
             scaleOnHover
             fadeOut
             fadeOutColor='#ffffff'
-            ariaLabel='Technology partners'
+            ariaLabel='Tech skills'
           />
         </div>
       </div>

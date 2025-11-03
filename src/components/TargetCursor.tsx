@@ -1,6 +1,12 @@
 'use client';
 
-import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import { gsap } from 'gsap';
 
 export interface TargetCursorProps {
@@ -18,6 +24,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
   const cornersRef = useRef<NodeListOf<HTMLDivElement>>(null);
   const spinTl = useRef<gsap.core.Timeline>(null);
   const dotRef = useRef<HTMLDivElement>(null);
+  const [hoveredLabel, setHoveredLabel] = useState<string | null>(null);
   const constants = useMemo(
     () => ({
       borderWidth: 3,
@@ -154,6 +161,11 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       }
 
       activeTarget = target;
+      const title =
+        target.getAttribute('title') ||
+        target.getAttribute('aria-label') ||
+        null;
+      setHoveredLabel(title);
       const corners = Array.from(cornersRef.current);
       corners.forEach(corner => {
         gsap.killTweensOf(corner);
@@ -244,6 +256,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
 
       const leaveHandler = () => {
         activeTarget = null;
+        setHoveredLabel(null);
         isAnimatingToTarget = false;
 
         if (cornersRef.current) {
@@ -368,6 +381,17 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
         className='target-cursor-corner absolute left-1/2 top-1/2 w-3 h-3 border-[3px] border-white transform -translate-x-[150%] translate-y-1/2 border-r-0 border-t-0'
         style={{ willChange: 'transform' }}
       />
+      {hoveredLabel && (
+        <div
+          className='absolute left-1/2 top-1/2 bg-white text-black px-3 py-1.5 text-xs font-medium whitespace-nowrap pointer-events-none'
+          style={{
+            transform: 'translate(20px, 20px)',
+            mixBlendMode: 'normal',
+          }}
+        >
+          {hoveredLabel}
+        </div>
+      )}
     </div>
   );
 };
