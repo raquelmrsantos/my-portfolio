@@ -151,6 +151,14 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
 
       if (activeTarget === target) return;
 
+      if (activeTarget !== target) {
+        const title =
+          target.getAttribute('title') ||
+          target.getAttribute('aria-label') ||
+          null;
+        setHoveredLabel(title);
+      }
+
       if (activeTarget) {
         cleanupTarget(activeTarget);
       }
