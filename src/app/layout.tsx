@@ -79,11 +79,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  /*   viewport: {
+  viewport: {
     width: "device-width",
     initialScale: 1,
-    maximumScale: 1,
-  }, */
+  },
 };
 
 export default function RootLayout({

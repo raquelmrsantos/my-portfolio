@@ -10,7 +10,7 @@ import { MailIcon } from './ui/MailIcon';
 
 export default function Contact() {
   return (
-    <section className='bg-white py-12 md:py-16 uppercase'>
+    <section className='bg-white py-12 md:py-16 uppercase' id="contact" aria-labelledby="contact-heading" data-testid="contact-section">
       <div className='max-w-6xl mx-auto px-4 md:px-8 lg:px-16 font-spline-sans-mono'>
         <div className='grid md:grid-cols-2 gap-8 items-center'>
           <div>
@@ -27,6 +27,7 @@ export default function Contact() {
               duration={1.2}
               speed={0.5}
               scrambleChars='.:'
+              data-testid="contact-description"
             >
               Available for freelance projects and full-time opportunities.
             </ScrambledText>
@@ -37,7 +38,7 @@ export default function Contact() {
                 href='mailto:raquelmrsantos@gmail.com?subject=Hey%20Raquel%2C%20Let%E2%80%99s%20Build%20Something%20Awesome!%20%F0%9F%A4%9D'
                 className='font-light flex items-center gap-2'
               >
-                <MailIcon className='cursor-target' />{' '}
+                <MailIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ Email ]' />
               </a>
               <a
@@ -46,7 +47,7 @@ export default function Contact() {
                 rel='noopener noreferrer'
                 className='font-light flex items-center gap-2'
               >
-                <LinkedInIcon className='cursor-target' />{' '}
+                <LinkedInIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ LinkedIn ]' />
               </a>
               <a
@@ -55,7 +56,7 @@ export default function Contact() {
                 rel='noopener noreferrer'
                 className='font-light flex items-center gap-2'
               >
-                <GithubIcon className='cursor-target' />{' '}
+                <GithubIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ GitHub ]' />
               </a>
               <a
@@ -63,7 +64,7 @@ export default function Contact() {
                 download
                 className='font-light flex items-center gap-2'
               >
-                <DownloadIcon className='cursor-target' />{' '}
+                <DownloadIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ Download CV ]' />
               </a>
             </div>

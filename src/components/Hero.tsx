@@ -6,12 +6,12 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <Section>
-      <div className='relative flex flex-col items-center space-y-8'>
+      <div className='relative flex flex-col items-center space-y-8' role="banner">
         {/* Profile Image with Text Overlay */}
-        <div className='relative'>
+        <div className='relative' data-testid="hero-image-container">
           <Image
             src='/profile-picture.webp'
-            alt='Profile picture'
+            alt='Raquel Santos, Web Developer'
             width={430}
             height={490}
             className='object-cover grayscale mt-40 sm:mt-65 md:mt-85 lg:mt-44'
@@ -20,6 +20,7 @@ export default function Hero() {
               height: 'clamp(228px, 45.6vw, 490px)'
             }}
             priority
+            data-testid="hero-image"
           />
 
           {/* Text overlay positioned at the top center of the image */}
@@ -28,7 +29,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className=''>
+        <div>
           <p
             className='font-spline-sans-mono text-center uppercase font-light'
             style={{
@@ -36,6 +37,7 @@ export default function Hero() {
               letterSpacing: '-2%',
               lineHeight: '99%',
             }}
+            data-testid="hero-tagline"
           >
             Crafting elegant digital experiences
           </p>
