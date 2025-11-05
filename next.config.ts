@@ -1,8 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
- webpack(config) {
+  // Enable SWC minification
+  swcMinify: true,
+  
+  // Explicitly configure compiler options
+  compiler: {
+    // Remove console.logs in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Font loader configuration
+  webpack(config) {
     config.module.rules.push({
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
       type: "asset/resource",
@@ -11,7 +20,7 @@ const nextConfig: NextConfig = {
       },
     });
     return config;
-  }, 
+  },
 };
 
 export default nextConfig;
