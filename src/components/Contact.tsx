@@ -14,12 +14,15 @@ export default function Contact() {
       <div className='max-w-6xl mx-auto px-4 md:px-8 lg:px-16 font-spline-sans-mono'>
         <div className='grid md:grid-cols-2 gap-8 items-center'>
           <div>
+            <h2 id="contact-heading" className="sr-only">Contact Information</h2>
             <BlurText
               text="Let's Connect"
               delay={150}
               animateBy='words'
               direction='top'
               className='text-2xl font-light mb-4'
+              aria-hidden="true"
+              data-testid="contact-title"
             />
             <ScrambledText
               className='font-light opacity-80 leading-relaxed'

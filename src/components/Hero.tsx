@@ -25,7 +25,8 @@ export default function Hero() {
 
           {/* Text overlay positioned at the top center of the image */}
           <div className='absolute -top-8 left-1/2 transform -translate-x-1/2 w-screen max-w-7xl px-4'>
-            <AnimatedHeroTitle title='WEB DEVELOPER' />
+            <h1 className="sr-only">Raquel Santos - Web Developer</h1>
+            <AnimatedHeroTitle title='WEB DEVELOPER' aria-hidden="true" data-testid="hero-title" />
           </div>
         </div>
 

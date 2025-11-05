@@ -74,14 +74,14 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div
-              className='hidden md:block text-base font-spline-sans-mono ©tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity cursor-target'
+            <button
+              className='hidden md:block text-base font-spline-sans-mono tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity cursor-target'
               onClick={() => handleNavClick('#contact')}
               aria-label="Contact me"
               data-testid="contact-button"
             >
-              Contact me <ArrowUpRight className='inline' />
-            </div>
+              Contact me <ArrowUpRight className='inline' aria-hidden="true" />
+            </button>
 
             {/* Mobile menu button */}
             <div className='md:hidden relative z-[101]'>
