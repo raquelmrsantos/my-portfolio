@@ -97,7 +97,12 @@ export default function RootLayout({
         className={`${stintUltraExpanded.variable} ${maelstrom.variable} ${sofiaSansCondensed.variable} ${splineSansMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-black">
+          Skip to main content
+        </a>
+        <main id="main">
+          {children}
+        </main>
         <Analytics />
         <SpeedInsights />
       </body>

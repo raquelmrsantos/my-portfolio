@@ -36,10 +36,12 @@ export default function Contact() {
             </ScrambledText>
           </div>
           <div className='space-y-4'>
-            <div className='flex flex-col space-y-2 cursor pointer'>
+            <div className='flex flex-col space-y-2' aria-label="Contact links">
               <a
                 href='mailto:raquelmrsantos@gmail.com?subject=Hey%20Raquel%2C%20Let%E2%80%99s%20Build%20Something%20Awesome!%20%F0%9F%A4%9D'
-                className='font-light flex items-center gap-2'
+                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                aria-label="Send me an email"
+                data-testid="email-link"
               >
                 <MailIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ Email ]' />
@@ -48,7 +50,9 @@ export default function Contact() {
                 href='https://www.linkedin.com/in/raquelmrsantos'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='font-light flex items-center gap-2'
+                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                aria-label="Visit my LinkedIn profile"
+                data-testid="linkedin-link"
               >
                 <LinkedInIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ LinkedIn ]' />
@@ -57,7 +61,9 @@ export default function Contact() {
                 href='https://github.com/raquelmrsantos'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='font-light flex items-center gap-2'
+                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                aria-label="Visit my GitHub profile"
+                data-testid="github-link"
               >
                 <GithubIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ GitHub ]' />
@@ -65,7 +71,9 @@ export default function Contact() {
               <a
                 href='/raquel-santos-cv.pdf'
                 download
-                className='font-light flex items-center gap-2'
+                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                aria-label="Download my CV"
+                data-testid="cv-link"
               >
                 <DownloadIcon className='cursor-target' aria-hidden="true" />{' '}
                 <AnimatedContactText text='[ Download CV ]' />
