@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import {
   Stint_Ultra_Expanded,
   Sofia_Sans_Condensed,
@@ -79,10 +79,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -97,12 +98,13 @@ export default function RootLayout({
         className={`${stintUltraExpanded.variable} ${maelstrom.variable} ${sofiaSansCondensed.variable} ${splineSansMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-black">
+        <a
+          href='#main'
+          className='sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-black'
+        >
           Skip to main content
         </a>
-        <main id="main">
-          {children}
-        </main>
+        <main id='main'>{children}</main>
         <Analytics />
         <SpeedInsights />
       </body>

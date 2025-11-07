@@ -1,9 +1,6 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Enable SWC minification
-  swcMinify: true,
-
   // Explicitly configure compiler options
   compiler: {
     // Remove console.logs in production
