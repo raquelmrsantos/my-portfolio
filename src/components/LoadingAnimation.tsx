@@ -93,13 +93,13 @@ const LoadingAnimation = ({ children }: LoadingAnimationProps) => {
       }
     };
 
-    const animate = () => {
+    const animate = async () => {
       if (object) {
         object.rotation.x += 0.005;
         object.rotation.y += 0.01;
       }
       if (postProcessing) {
-        postProcessing.render();
+        await postProcessing.renderAsync();
       }
       requestAnimationFrame(animate);
     };
