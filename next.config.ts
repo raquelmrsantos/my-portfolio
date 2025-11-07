@@ -1,9 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   // Enable SWC minification
   swcMinify: true,
-  
+
   // Explicitly configure compiler options
   compiler: {
     // Remove console.logs in production
@@ -14,9 +14,9 @@ const nextConfig: NextConfig = {
   webpack(config) {
     config.module.rules.push({
       test: /\.(woff|woff2|eot|ttf|otf)$/i,
-      type: "asset/resource",
+      type: 'asset/resource',
       generator: {
-        filename: "static/fonts/[name][ext]",
+        filename: 'static/fonts/[name][ext]',
       },
     });
     return config;
@@ -24,3 +24,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
