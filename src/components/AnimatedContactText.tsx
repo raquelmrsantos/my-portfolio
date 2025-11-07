@@ -65,7 +65,10 @@ const AnimatedContactText = ({ text }: { text: string }) => {
   }, []);
 
   useEffect(() => {
-    init();
+    // Wait for fonts to load before initializing SplitText
+    document.fonts.ready.then(() => {
+      init();
+    });
   }, [init]);
 
   return (

@@ -12,45 +12,66 @@ const AnimatedHeroTitle = ({ title }: { title: string }) => {
   const titleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const currentRef = titleRef.current; // Capture ref value
+    const currentRef = titleRef.current;
     if (!currentRef) return;
 
-    const splitTitle = new SplitText(currentRef, { type: 'chars' });
+    let splitTitle: SplitText | null = null;
+    let tl: gsap.core.Timeline | gsap.core.Tween | null = null;
 
-    // Set the initial state (hidden)
-    gsap.set(splitTitle.chars, {
-      opacity: 0,
-      y: -50,
-    });
+    // Wait for fonts to load before initializing SplitText
+    const initAnimation = async () => {
+      try {
+        // Wait for all fonts to be ready
+        await document.fonts.ready;
 
-    // Create scroll-triggered animation
-    const tl = gsap.to(splitTitle.chars, {
-      opacity: 1,
-      y: 0,
-      ease: 'back.out(1.7)',
-      stagger: {
-        from: 'center',
-        each: 0.06,
-      },
-      scrollTrigger: {
-        trigger: currentRef,
-        // trigger when title enters the bottom of the viewport — more reliable on small screens
-        start: 'top bottom',
-        end: 'bottom 20%',
-        toggleActions: 'play none none reverse',
-      },
-    });
+        // Add a small delay to ensure layout is stable
+        await new Promise(resolve => setTimeout(resolve, 50));
+
+        if (!currentRef) return;
+
+        splitTitle = new SplitText(currentRef, { type: 'chars' });
+
+        // Set the initial state (hidden)
+        gsap.set(splitTitle.chars, {
+          opacity: 0,
+          y: -50,
+        });
+
+        // Create scroll-triggered animation
+        tl = gsap.to(splitTitle.chars, {
+          opacity: 1,
+          y: 0,
+          ease: 'back.out(1.7)',
+          stagger: {
+            from: 'center',
+            each: 0.06,
+          },
+          scrollTrigger: {
+            trigger: currentRef,
+            start: 'top bottom',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+      } catch (error) {
+        console.error('Error initializing animation:', error);
+      }
+    };
+
+    initAnimation();
 
     // Cleanup function
     return () => {
       // Kill the specific ScrollTrigger instance
-      if (tl.scrollTrigger) {
+      if (tl && 'scrollTrigger' in tl && tl.scrollTrigger) {
         tl.scrollTrigger.kill();
       }
       // Revert SplitText
-      splitTitle.revert();
+      if (splitTitle) {
+        splitTitle.revert();
+      }
     };
-  }, [title]); // Add title as a dependency
+  }, [title]);
 
   return (
     <h1
