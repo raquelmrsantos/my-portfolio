@@ -6,9 +6,12 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <Section>
-      <div className='relative flex flex-col items-center space-y-8' role="banner">
+      <div
+        className='relative flex flex-col items-center space-y-8'
+        role='banner'
+      >
         {/* Profile Image with Text Overlay */}
-        <div className='relative' data-testid="hero-image-container">
+        <div className='relative' data-testid='hero-image-container'>
           <Image
             src='/profile-picture.webp'
             alt='Raquel Santos, Web Developer'
@@ -17,16 +20,20 @@ export default function Hero() {
             className='object-cover grayscale mt-40 sm:mt-65 md:mt-85 lg:mt-44'
             style={{
               width: 'clamp(200px, 40vw, 430px)',
-              height: 'clamp(228px, 45.6vw, 490px)'
+              height: 'clamp(228px, 45.6vw, 490px)',
             }}
             priority
-            data-testid="hero-image"
+            data-testid='hero-image'
           />
 
           {/* Text overlay positioned at the top center of the image */}
           <div className='absolute -top-8 left-1/2 transform -translate-x-1/2 w-screen max-w-7xl px-4'>
-            <h1 className="sr-only">Raquel Santos - Web Developer</h1>
-            <AnimatedHeroTitle title='WEB DEVELOPER' aria-hidden="true" data-testid="hero-title" />
+            <h1 className='sr-only'>Raquel Santos - Web Developer</h1>
+            <AnimatedHeroTitle
+              title='WEB DEVELOPER'
+              aria-hidden='true'
+              data-testid='hero-title'
+            />
           </div>
         </div>
 
@@ -38,7 +45,7 @@ export default function Hero() {
               letterSpacing: '-2%',
               lineHeight: '99%',
             }}
-            data-testid="hero-tagline"
+            data-testid='hero-tagline'
           >
             Crafting elegant digital experiences
           </p>

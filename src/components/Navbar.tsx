@@ -46,27 +46,37 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='fixed top-0 left-0 w-full z-50 mix-blend-difference py-[25px] lg:py-[37px] pointer-events-none' role="navigation" aria-label="Main navigation">
+      <nav
+        className='fixed top-0 left-0 w-full z-50 mix-blend-difference py-[25px] lg:py-[37px] pointer-events-none'
+        role='navigation'
+        aria-label='Main navigation'
+      >
         <div className='mx-auto px-4 md:px-0 lg:px-4 pointer-events-auto'>
           <div className='flex justify-between items-center'>
             <button
               onClick={() => handleNavClick('#home')}
               className='cursor-pointer font-bold uppercase pt-[2px] leading-[0.7] font-sofia-sans-condensed overflow-visible relative z-[101] text-2xl lg:text-[40px] tracking-[-1px] lg:tracking-[-3px] w-[90px] lg:w-[135px] text-white cursor-target'
-              aria-label="Go to home section"
-              data-testid="home-button"
+              aria-label='Go to home section'
+              data-testid='home-button'
             >
               Raquel Santos
             </button>
 
             {/* Desktop Navigation */}
-            <div className='hidden md:flex space-x-8 font-spline-sans-mono' role="menubar" data-testid="desktop-nav">
+            <div
+              className='hidden md:flex space-x-8 font-spline-sans-mono'
+              role='menubar'
+              data-testid='desktop-nav'
+            >
               {navItems.map(item => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
                   className='cursor-pointer text-base tracking-wide uppercase text-white hover:opacity-70 transition-opacity cursor-target'
-                  role="menuitem"
-                  aria-label={`Go to ${item.name.replace(/[\[\]]/g, '').trim()} section`}
+                  role='menuitem'
+                  aria-label={`Go to ${item.name
+                    .replace(/[\[\]]/g, '')
+                    .trim()} section`}
                   data-testid={`nav-${item.href.replace('#', '')}`}
                 >
                   <AnimatedText text={item.name} />
@@ -77,10 +87,10 @@ export default function Navbar() {
             <button
               className='hidden md:block text-base font-spline-sans-mono tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity cursor-target'
               onClick={() => handleNavClick('#contact')}
-              aria-label="Contact me"
-              data-testid="contact-button"
+              aria-label='Contact me'
+              data-testid='contact-button'
             >
-              Contact me <ArrowUpRight className='inline' aria-hidden="true" />
+              Contact me <ArrowUpRight className='inline' aria-hidden='true' />
             </button>
 
             {/* Mobile menu button */}
@@ -90,15 +100,15 @@ export default function Navbar() {
                 className='font-spline-sans-mono text-base tracking-wide uppercase hover:opacity-70 transition-all'
                 aria-label='Toggle menu'
                 aria-expanded={isMobileMenuOpen}
-                aria-controls="mobile-menu"
-                data-testid="mobile-menu-button"
+                aria-controls='mobile-menu'
+                data-testid='mobile-menu-button'
               >
                 <span className='whitespace-nowrap'>
                   <span
                     className={`absolute right-0 text-white mix-blend-difference transition-opacity ${
                       isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
                     }`}
-                    aria-hidden="true"
+                    aria-hidden='true'
                   >
                     [CLOSE]
                   </span>
@@ -106,7 +116,7 @@ export default function Navbar() {
                     className={`text-white mix-blend-difference transition-opacity ${
                       isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
                     }`}
-                    aria-hidden="true"
+                    aria-hidden='true'
                   >
                     [MENU]
                   </span>

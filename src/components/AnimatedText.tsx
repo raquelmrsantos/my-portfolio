@@ -118,3 +118,4 @@ const AnimatedText = ({ text }: { text: string }) => {
 };
 
 export default AnimatedText;
+
