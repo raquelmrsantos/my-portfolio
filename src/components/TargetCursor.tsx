@@ -34,7 +34,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
     [],
   );
 
-  const moveCursor = useCallback((x: number, y: number) => {
+    const moveCursor = useCallback((x: number, y: number) => {
     if (!cursorRef.current) return;
     gsap.to(cursorRef.current, {
       x,
@@ -152,10 +152,12 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       if (activeTarget === target) return;
 
       if (activeTarget !== target) {
-        const title =
-          target.getAttribute('title') ||
-          target.getAttribute('aria-label') ||
-          null;
+        const isLogoLoopItem = target.closest('.logo-loop-item');
+        const title = isLogoLoopItem
+          ? target.getAttribute('title') ||
+            target.getAttribute('aria-label') ||
+            null
+          : null;
         setHoveredLabel(title);
       }
 
@@ -169,10 +171,12 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
       }
 
       activeTarget = target;
-      const title =
-        target.getAttribute('title') ||
-        target.getAttribute('aria-label') ||
-        null;
+      const isLogoLoopItem = target.closest('.logo-loop-item');
+      const title = isLogoLoopItem
+        ? target.getAttribute('title') ||
+          target.getAttribute('aria-label') ||
+          null
+        : null;
       setHoveredLabel(title);
       const corners = Array.from(cornersRef.current);
       corners.forEach(corner => {
