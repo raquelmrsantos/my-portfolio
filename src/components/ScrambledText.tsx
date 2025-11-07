@@ -29,47 +29,79 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
   useEffect(() => {
     if (!rootRef.current) return;
 
-    // Split by words first to keep words together
-    const split = SplitText.create(rootRef.current.querySelector('p'), {
-      type: 'words,chars',
-      wordsClass: 'inline-block',
-      charsClass: 'inline-block will-change-transform',
-    });
+    let split: SplitText | null = null;
+    let handleMove: ((e: PointerEvent) => void) | null = null;
 
-    split.chars.forEach(el => {
-      const c = el as HTMLElement;
-      gsap.set(c, { attr: { 'data-content': c.innerHTML } });
-    });
+    // Wait for fonts to load before initializing SplitText
+    const initScramble = async () => {
+      try {
+        // Wait for all fonts to be ready
+        await document.fonts.ready;
 
-    const handleMove = (e: PointerEvent) => {
-      split.chars.forEach(el => {
-        const c = el as HTMLElement;
-        const { left, top, width, height } = c.getBoundingClientRect();
-        const dx = e.clientX - (left + width / 2);
-        const dy = e.clientY - (top + height / 2);
-        const dist = Math.hypot(dx, dy);
+        // Add a small delay to ensure layout is stable
+        await new Promise(resolve => setTimeout(resolve, 50));
 
-        if (dist < radius) {
-          gsap.to(c, {
-            overwrite: true,
-            duration: duration * (1 - dist / radius),
-            scrambleText: {
-              text: c.dataset.content || '',
-              chars: scrambleChars,
-              speed,
-            },
-            ease: 'none',
+        if (!rootRef.current) return;
+
+        const paragraph = rootRef.current.querySelector('p');
+        if (!paragraph) return;
+
+        // Split by words first to keep words together
+        split = SplitText.create(paragraph, {
+          type: 'words,chars',
+          wordsClass: 'inline-block',
+          charsClass: 'inline-block will-change-transform',
+        });
+
+        split.chars.forEach(el => {
+          const c = el as HTMLElement;
+          gsap.set(c, { attr: { 'data-content': c.innerHTML } });
+        });
+
+        handleMove = (e: PointerEvent) => {
+          if (!split) return;
+
+          split.chars.forEach(el => {
+            const c = el as HTMLElement;
+            const { left, top, width, height } = c.getBoundingClientRect();
+            const dx = e.clientX - (left + width / 2);
+            const dy = e.clientY - (top + height / 2);
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < radius) {
+              gsap.to(c, {
+                overwrite: true,
+                duration: duration * (1 - dist / radius),
+                scrambleText: {
+                  text: c.dataset.content || '',
+                  chars: scrambleChars,
+                  speed,
+                },
+                ease: 'none',
+              });
+            }
           });
+        };
+
+        const el = rootRef.current;
+        if (el && handleMove) {
+          el.addEventListener('pointermove', handleMove);
         }
-      });
+      } catch (error) {
+        console.error('Error initializing scrambled text:', error);
+      }
     };
 
-    const el = rootRef.current;
-    el.addEventListener('pointermove', handleMove);
+    initScramble();
 
     return () => {
-      el.removeEventListener('pointermove', handleMove);
-      split.revert();
+      const el = rootRef.current;
+      if (el && handleMove) {
+        el.removeEventListener('pointermove', handleMove);
+      }
+      if (split) {
+        split.revert();
+      }
     };
   }, [radius, duration, speed, scrambleChars]);
 
