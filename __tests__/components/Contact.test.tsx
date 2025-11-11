@@ -62,7 +62,7 @@ describe('Contact Component', () => {
 
     // Test CV download link
     const cvLink = screen.getByTestId('cv-link');
-    expect(cvLink).toHaveAttribute('href', '/raquel-santos-cv.pdf');
+    expect(cvLink).toHaveAttribute('href', '/CV_Raquel_Santos_dev.pdf');
     expect(cvLink).toHaveAttribute('download');
     expect(cvLink).toHaveAttribute('aria-label', 'Download my CV');
   });

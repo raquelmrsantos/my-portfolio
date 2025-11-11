@@ -76,7 +76,7 @@ export default function Contact() {
                 <AnimatedContactText text='[ GitHub ]' />
               </a>
               <a
-                href='/raquel-santos-cv.pdf'
+                href='/CV_Raquel_Santos_dev.pdf'
                 download
                 className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
                 aria-label='Download my CV'
