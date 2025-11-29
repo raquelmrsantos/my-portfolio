@@ -210,20 +210,11 @@ body {
   transition-delay: 0.25s;
 }
 
-
 @media (max-width: 768px) {
   .section-divider {
     width: calc(100% - 2rem);
   }
 }
-
-/* @media (max-width: 480px) {
-    .hero-title {
-        font-size: clamp(1.2rem, 6vw, 2rem);
-    }
-}
-
- */
 
 .dark {
   --background: oklch(0.13 0.028 261.692);

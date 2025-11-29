@@ -168,15 +168,6 @@ const LoadingAnimation = ({ children }: LoadingAnimationProps) => {
           >
             {progress}%
           </div>
-          <div
-            className='text-sm mt-8 text-black'
-            style={{
-              opacity: 0.7,
-              textShadow: '0 0 10px rgba(255,255,255,0.8)',
-            }}
-          >
-            [ UNDER CONSTRUCTION ]
-          </div>
         </div>
       </div>
     );
