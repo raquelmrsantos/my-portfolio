@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
         <div className='text-sm font-light opacity-60 text-right'>
           <p className='md:inline'>© All rights reserved. </p>
-          <p className='md:inline'>2025 Raquel Santos.</p>
+          <p className='md:inline'>2026 Raquel Santos.</p>
         </div>
       </div>
     </footer>
