@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic';
 const Experience = dynamic(() => import('@/components/Experience'));
 const Contact = dynamic(() => import('@/components/Contact'));
 const ConnectForm = dynamic(() => import('@/components/ConnectForm'));
+const Services = dynamic(() => import('@/components/Services'));
 
 export default function Home() {
   return (
@@ -30,6 +31,10 @@ export default function Home() {
 
           <section id='experience'>
             <Experience />
+          </section>
+
+          <section id='services'>
+            <Services />
           </section>
 
           <section id='connect'>
