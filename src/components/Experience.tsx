@@ -63,8 +63,8 @@ export default function Experience() {
 
                 <p className='font-light mt-4'>
                   <ArrowDownRight className='inline text-gray-500' />{' '}
-                  JavaScript, Angular, TypeScript, HTML5, SCSS, Storybook,
-                  Figma, Bitbucket
+                  JavaScript, Angular, TypeScript, SCSS, Storybook,
+                  Figma, Jira, Bitbucket
                 </p>
               </div>
             </div>
