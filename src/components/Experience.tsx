@@ -2,6 +2,7 @@
 
 import BlurText from './BlurText';
 import LogoLoop from './LogoLoop';
+import ScrambledText from './ScrambledText';
 import Section from './Section';
 import { ArrowDownRight } from 'lucide-react';
 import {
@@ -55,17 +56,30 @@ export default function Experience() {
 
             <div className='space-y-6'>
               <div>
-                <p className='font-light mb-4 leading-relaxed'>
+                <ScrambledText
+                  className='font-light mb-4 leading-relaxed'
+                  radius={60}
+                  duration={1.2}
+                  speed={0.5}
+                  scrambleChars='.:'
+                >
                   Consulting for a client in the e-mobility sector, delivering
                   front-end solutions focused on scalable, maintainable
                   interfaces aligned with modern electric vehicle industry needs.
-                </p>
+                </ScrambledText>
 
-                <p className='font-light mt-4'>
-                  <ArrowDownRight className='inline text-gray-500' />{' '}
-                  JavaScript, Angular, TypeScript, SCSS, Storybook,
-                  Figma, Jira, Bitbucket
-                </p>
+                <div className='font-light mt-4 flex items-start gap-1'>
+                  <ArrowDownRight className='min-w-6 text-gray-500 inline mt-0.5' />
+                  <ScrambledText
+                    radius={60}
+                    duration={1.2}
+                    speed={0.5}
+                    scrambleChars='.:'
+                  >
+                    JavaScript, Angular, TypeScript, SCSS, Storybook,
+                    Figma, Jira, Bitbucket
+                  </ScrambledText>
+                </div>
               </div>
             </div>
           </div>
@@ -83,50 +97,82 @@ export default function Experience() {
                 <h4 className='text-sm font-normal opacity-60 mb-3 tracking-widest'>
                   Farfetch Platform Solutions (FPS)
                 </h4>
-                <p className='font-light mb-4 leading-relaxed'>
+                <ScrambledText
+                  className='font-light mb-4 leading-relaxed'
+                  radius={60}
+                  duration={1.2}
+                  speed={0.5}
+                  scrambleChars='.:'
+                >
                   Front-end development for multiple high-end e-commerce
                   websites, delivering premium shopping experiences for luxury
                   brands:
-                </p>
+                </ScrambledText>
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-2 text-sm font-light opacity-80'>
-                  <span>Reebok</span>
-                  <span>Ferragamo</span>
-                  <span>Violet Grey</span>
-                  <span>JW Anderson</span>
-                  <span>Stadium Goods</span>
-                  <span>Mackintosh</span>
-                  <span>Browns</span>
-                  <span>N°21</span>
-                  <span>Thom Browne</span>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>Reebok</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>Ferragamo</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>Violet Grey</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>JW Anderson</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>Stadium Goods</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>Mackintosh</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>Browns</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>N°21</ScrambledText>
+                  <ScrambledText radius={60} duration={1.2} speed={0.5} scrambleChars='.:'>Thom Browne</ScrambledText>
                 </div>
-                <p className='font-light mt-4 leading-relaxed'>
+                <ScrambledText
+                  className='font-light mt-4 leading-relaxed'
+                  radius={60}
+                  duration={1.2}
+                  speed={0.5}
+                  scrambleChars='.:'
+                >
                   Front-end development of a specialized internal tool, designed
                   for in-store sales assistants across the YNAP Group, enhancing
                   retail workflows and customer service.
-                </p>
+                </ScrambledText>
 
-                <p className='font-light mt-4'>
-                  <ArrowDownRight className='inline text-gray-500' />{' '}
-                  JavaScript, React, TypeScript, Cypress, Jest, Testing Library,
-                  Postman, Oracle Responsys (email integration), SEO
-                  optimization, Storybook, Figma, GitLab, Jira, Jenkins
-                </p>
+                <div className='font-light mt-4 flex items-start gap-1'>
+                  <ArrowDownRight className='min-w-6 text-gray-500 inline mt-0.5' />
+                  <ScrambledText
+                    radius={60}
+                    duration={1.2}
+                    speed={0.5}
+                    scrambleChars='.:'
+                  >
+                    JavaScript, React, TypeScript, Cypress, Jest, Testing Library,
+                    Postman, Oracle Responsys (email integration), SEO
+                    optimization, Storybook, Figma, GitLab, Jira, Jenkins
+                  </ScrambledText>
+                </div>
               </div>
 
               <div>
                 <h4 className='text-sm font-normal opacity-60 mb-3 tracking-widest'>
                   Critical TechWorks (CTW)
                 </h4>
-                <p className='font-light leading-relaxed'>
+                <ScrambledText
+                  className='font-light leading-relaxed'
+                  radius={60}
+                  duration={1.2}
+                  speed={0.5}
+                  scrambleChars='.:'
+                >
                   Front-end development for internal platforms focused on
                   improving employee workflows and operational efficiency.
-                </p>
+                </ScrambledText>
 
-                <p className='font-light mt-4'>
-                  <ArrowDownRight className='inline text-gray-500' />{' '}
-                  JavaScript, Angular, TypeScript, Jest, Figma, Jira, Azure
-                  DevOps, Jenkins
-                </p>
+                <div className='font-light mt-4 flex items-start gap-1'>
+                  <ArrowDownRight className='min-w-6 text-gray-500 inline mt-0.5' />
+                  <ScrambledText
+                    radius={60}
+                    duration={1.2}
+                    speed={0.5}
+                    scrambleChars='.:'
+                  >
+                    JavaScript, Angular, TypeScript, Jest, Figma, Jira, Azure
+                    DevOps, Jenkins
+                  </ScrambledText>
+                </div>
               </div>
             </div>
           </div>

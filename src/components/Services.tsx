@@ -3,6 +3,7 @@
 import React from 'react';
 import Section from './Section';
 import BlurText from './BlurText';
+import ScrambledText from './ScrambledText';
 import { ArrowDownRight } from 'lucide-react';
 
 export default function Services() {
@@ -40,9 +41,15 @@ export default function Services() {
                 <ArrowDownRight className='min-w-6 text-gray-500' />
                 {service.title}
               </h3>
-              <p className='text-sm font-light leading-relaxed normal-case tracking-wide opacity-90'>
+              <ScrambledText
+                className='text-sm font-light leading-relaxed normal-case tracking-wide opacity-90'
+                radius={60}
+                duration={1.2}
+                speed={0.5}
+                scrambleChars='.:'
+              >
                 {service.description}
-              </p>
+              </ScrambledText>
             </div>
           ))}
         </div>
