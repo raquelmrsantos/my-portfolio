@@ -265,3 +265,15 @@ body {
   outline: none;
   border: none;
 }
+
+.PhoneInputCountryIcon {
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.PhoneInput:hover .PhoneInputCountryIcon,
+.PhoneInput:focus-within .PhoneInputCountryIcon {
+  filter: grayscale(0%);
+  opacity: 1;
+}
