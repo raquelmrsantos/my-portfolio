@@ -37,7 +37,7 @@ export default function About() {
             speed={0.5}
             scrambleChars='.:'
           >
-            My journey in technology has led me to specialize in React,
+            My journey in technology has led me to specialize in React, Angular,
             TypeScript, and crafting seamless user experiences that bridge the
             gap between design and functionality.
           </ScrambledText>
