@@ -258,3 +258,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* react-phone-number-input overrides */
+.PhoneInputInput {
+  background: transparent;
+  outline: none;
+  border: none;
+}

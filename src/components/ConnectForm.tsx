@@ -3,6 +3,8 @@
 import { useState, FormEvent } from 'react';
 import Section from './Section';
 import BlurText from './BlurText';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 export default function ConnectForm() {
   const [formData, setFormData] = useState({
@@ -18,6 +20,13 @@ export default function ConnectForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    if (formData.phone && !isValidPhoneNumber(formData.phone)) {
+      setErrorMessage('Please enter a valid phone number.');
+      setStatus('error');
+      return;
+    }
+
     setStatus('loading');
     setErrorMessage('');
 
@@ -104,15 +113,20 @@ export default function ConnectForm() {
               >
                 Phone
               </label>
-              <input
-                type='tel'
+              <PhoneInput
                 id='phone'
                 name='phone'
+                defaultCountry='PT'
                 value={formData.phone}
-                onChange={handleChange}
+                onChange={(value) => setFormData({ ...formData, phone: value || '' })}
                 disabled={status === 'loading'}
-                className='w-full px-4 py-3 bg-transparent border border-black/20 focus:border-black/40 outline-none transition-colors font-light disabled:opacity-50'
+                className='w-full px-4 py-3 bg-transparent border border-black/20 focus-within:border-black/40 outline-none transition-colors font-light disabled:opacity-50'
               />
+              {formData.phone && !isValidPhoneNumber(formData.phone) && (
+                <span className="text-red-700 text-xs mt-1 block">
+                  Invalid phone number
+                </span>
+              )}
             </div>
 
             {/* Email Field */}
