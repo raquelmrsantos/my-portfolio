@@ -116,6 +116,7 @@ export default function ConnectForm() {
               <PhoneInput
                 id='phone'
                 name='phone'
+                aria-label='Phone number'
                 defaultCountry='PT'
                 value={formData.phone}
                 onChange={(value) => setFormData({ ...formData, phone: value || '' })}
