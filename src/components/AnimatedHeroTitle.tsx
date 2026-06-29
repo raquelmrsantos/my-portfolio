@@ -74,7 +74,7 @@ const AnimatedHeroTitle = ({ title }: { title: string }) => {
   }, [title]);
 
   return (
-    <h1
+    <h2
       ref={titleRef}
       className='font-bold font-sofia-sans-condensed uppercase text-center text-black tracking-[-8px] leading-[0.8] mt-6 sm:mt-8 md:mt-10 lg:mt-15 text-[clamp(5.5rem,25vw,15rem)]'
       style={{
@@ -83,7 +83,7 @@ const AnimatedHeroTitle = ({ title }: { title: string }) => {
     >
       <span className='lg:inline block'>web</span>{' '}
       <span className='lg:inline block'>developer</span>
-    </h1>
+    </h2>
   );
 };
 
