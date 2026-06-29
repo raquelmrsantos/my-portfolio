@@ -46,6 +46,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
 
   useEffect(() => {
     if (!cursorRef.current) return;
+    if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) return;
 
     const originalCursor = document.body.style.cursor;
     if (hideDefaultCursor) {
@@ -355,6 +356,7 @@ const TargetCursor: React.FC<TargetCursorProps> = ({
 
   useEffect(() => {
     if (!cursorRef.current || !spinTl.current) return;
+    if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) return;
 
     if (spinTl.current.isActive()) {
       spinTl.current.kill();
