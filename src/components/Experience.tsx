@@ -47,17 +47,40 @@ export default function Experience() {
         </div>
         <div className='space-y-12 font-spline-sans-mono uppercase'>
           <div>
-            <h2 className='text-2xl font-light mb-2'>Present Technologies</h2>
-            <h3 className='text-xl font-normal mb-1'>
-              Junior Software Engineer
-            </h3>
+            <h3 className='text-2xl font-normal mb-1'>Amaris Consulting</h3>
+            <p className='text-base font-light opacity-80 mb-1'>Frontend Developer</p>
             <p className='text-sm font-light opacity-70 mb-6 uppercase tracking-widest'>
-              2023 - 2025
+              2026 - Present
             </p>
 
             <div className='space-y-6'>
               <div>
-                <h4 className='font-normal mb-3'>
+                <p className='font-light mb-4 leading-relaxed'>
+                  Consulting for a client in the e-mobility sector, delivering
+                  front-end solutions focused on scalable, maintainable
+                  interfaces aligned with modern electric vehicle industry needs.
+                </p>
+
+                <p className='font-light mt-4'>
+                  <ArrowDownRight className='inline text-gray-500' />{' '}
+                  JavaScript, Angular, TypeScript, HTML5, SCSS, Storybook,
+                  Figma, Bitbucket
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className='text-2xl font-normal mb-1'>Present Technologies</h3>
+            <p className='text-base font-light opacity-80 mb-1'>Junior Software Engineer</p>
+            <p className='text-sm font-light opacity-70 mb-6 uppercase tracking-widest'>
+              2023 - 2025
+            </p>
+
+            <div className='space-y-8'>
+              {/* Client: FPS */}
+              <div>
+                <h4 className='text-sm font-normal opacity-60 mb-3 tracking-widest'>
                   Farfetch Platform Solutions (FPS)
                 </h4>
                 <p className='font-light mb-4 leading-relaxed'>
@@ -86,12 +109,14 @@ export default function Experience() {
                   <ArrowDownRight className='inline text-gray-500' />{' '}
                   JavaScript, React, TypeScript, Cypress, Jest, Testing Library,
                   Postman, Oracle Responsys (email integration), SEO
-                  optimization, Figma, Storybook, GitLab, Jira, Jenkins
+                  optimization, Storybook, Figma, GitLab, Jira, Jenkins
                 </p>
               </div>
 
               <div>
-                <h4 className='font-normal mb-3'>Critical TechWorks (CTW)</h4>
+                <h4 className='text-sm font-normal opacity-60 mb-3 tracking-widest'>
+                  Critical TechWorks (CTW)
+                </h4>
                 <p className='font-light leading-relaxed'>
                   Front-end development for internal platforms focused on
                   improving employee workflows and operational efficiency.
