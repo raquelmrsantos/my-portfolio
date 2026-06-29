@@ -53,13 +53,19 @@ export const metadata: Metadata = {
   keywords: [
     'Raquel Santos',
     'Portfolio',
-    'Creative',
-    'Professional',
-    'Web Developer',
-    'Front-End Developer',
+    'Freelance Web Developer',
+    'Front-End Engineer',
+    'React Developer',
+    'Next.js Specialist',
+    'E-commerce Front-End',
+    'Angular',
+    'TypeScript',
   ],
   authors: [{ name: 'Raquel Santos' }],
   creator: 'Raquel Santos',
+  alternates: {
+    canonical: 'https://www.raqueldossantos.com',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
