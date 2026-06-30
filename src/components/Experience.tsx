@@ -13,6 +13,7 @@ import {
   SiGithub,
   SiGitlab,
   SiCypress,
+  SiAngular,
 } from 'react-icons/si';
 
 const techLogos = [
@@ -31,6 +32,7 @@ const techLogos = [
   { node: <SiCypress />, title: 'Cypress', href: 'https://www.cypress.io' },
   { node: <SiGithub />, title: 'GitHub', href: 'https://github.com' },
   { node: <SiGitlab />, title: 'GitLab', href: 'https://gitlab.com' },
+  { node: <SiAngular />, title: 'Angular', href: 'https://angular.dev' },
 ];
 
 export default function Experience() {
