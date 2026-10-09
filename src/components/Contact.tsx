@@ -6,6 +6,7 @@ import { DownloadIcon } from './ui/DownloadIcon';
 import { GithubIcon } from './ui/GithubIcon';
 import { LinkedInIcon } from './ui/LinkedinIcon';
 import { MailIcon } from './ui/MailIcon';
+import { RollingItem } from './RollingItem';
 
 export default function Contact() {
   return (
@@ -42,47 +43,66 @@ export default function Contact() {
             </ScrambledText>
           </div>
           <div className='space-y-4'>
-            <div className='inline-flex flex-col space-y-2' aria-label='Contact links'>
+            <div
+              className='inline-flex flex-col space-y-2'
+              aria-label='Contact links'
+            >
               <a
                 href='mailto:raquelmrsantos@gmail.com?subject=Hey%20Raquel%2C%20Let%E2%80%99s%20Build%20Something%20Awesome!%20%F0%9F%A4%9D'
-                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                className='font-light flex items-center gap-2 p-2 cursor-target'
                 aria-label='Send me an email'
                 data-testid='email-link'
               >
-                <MailIcon className='cursor-target' aria-hidden='true' />{' '}
-                <span className='uppercase'>Email</span>
+                <RollingItem>
+                  <span className='flex items-center gap-2'>
+                    <MailIcon aria-hidden='true' />
+                    <span className='uppercase'>Email</span>
+                  </span>
+                </RollingItem>
               </a>
               <a
                 href='https://www.linkedin.com/in/raquelmrsantos'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                className='font-light flex items-center gap-2 p-2 cursor-target'
                 aria-label='Visit my LinkedIn profile'
                 data-testid='linkedin-link'
               >
-                <LinkedInIcon className='cursor-target' aria-hidden='true' />{' '}
-                <span className='uppercase'>LinkedIn</span>
+                <RollingItem>
+                  <span className='flex items-center gap-2'>
+                    <LinkedInIcon aria-hidden='true' />
+                    <span className='uppercase'>LinkedIn</span>
+                  </span>
+                </RollingItem>
               </a>
               <a
                 href='https://github.com/raquelmrsantos'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                className='font-light flex items-center gap-2 p-2 cursor-target'
                 aria-label='Visit my GitHub profile'
                 data-testid='github-link'
               >
-                <GithubIcon className='cursor-target' aria-hidden='true' />{' '}
-                <span className='uppercase'>GitHub</span>
+                <RollingItem>
+                  <span className='flex items-center gap-2'>
+                    <GithubIcon aria-hidden='true' />
+                    <span className='uppercase'>GitHub</span>
+                  </span>
+                </RollingItem>
               </a>
               <a
                 href='/CV_Raquel_Santos_dev.pdf'
                 download
-                className='font-light flex items-center gap-2 p-2 hover:opacity-70 transition-opacity'
+                className='font-light flex items-center gap-2 p-2 cursor-target'
                 aria-label='Download my CV'
                 data-testid='cv-link'
               >
-                <DownloadIcon className='cursor-target' aria-hidden='true' />{' '}
-                <span className='uppercase'>Download CV</span>
+                <RollingItem>
+                  <span className='flex items-center gap-2'>
+                    <DownloadIcon aria-hidden='true' />
+                    <span className='uppercase'>Download CV</span>
+                  </span>
+                </RollingItem>
               </a>
             </div>
           </div>

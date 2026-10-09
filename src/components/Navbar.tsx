@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import MobileMenu from './MobileMenu';
+import { RollingItem } from './RollingItem';
 
 const navItems = [
   { name: 'Home', href: '#home' },
@@ -72,23 +73,26 @@ export default function Navbar() {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className='cursor-pointer text-base tracking-wide uppercase text-white hover:opacity-70 transition-opacity cursor-target'
+                  className='cursor-pointer text-base tracking-wide uppercase text-white cursor-target'
                   role='menuitem'
                   aria-label={`Go to ${item.name} section`}
                   data-testid={`nav-${item.href.replace('#', '')}`}
                 >
-                  {item.name}
+                  <RollingItem>{item.name}</RollingItem>
                 </button>
               ))}
             </div>
 
             <button
-              className='hidden md:block text-base font-spline-sans-mono tracking-wide uppercase cursor-pointer text-white hover:opacity-70 transition-opacity cursor-target'
+              className='hidden md:block text-base font-spline-sans-mono tracking-wide uppercase cursor-pointer text-white cursor-target'
               onClick={() => handleNavClick('#contact')}
               aria-label='Contact me'
               data-testid='contact-button'
             >
-              Contact me <ArrowUpRight className='inline' aria-hidden='true' />
+              <RollingItem>
+                Contact me{' '}
+                <ArrowUpRight className='inline' aria-hidden='true' />
+              </RollingItem>
             </button>
 
             {/* Mobile menu button */}
