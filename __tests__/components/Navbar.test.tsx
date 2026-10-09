@@ -1,12 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Navbar from '@/components/Navbar';
 
-// Mock AnimatedText component
-jest.mock('@/components/AnimatedText', () => {
-  return function MockAnimatedText({ text }: { text: string }) {
-    return <span data-testid='animated-text'>{text}</span>;
-  };
-});
 
 describe('Navbar Component', () => {
   beforeEach(() => {

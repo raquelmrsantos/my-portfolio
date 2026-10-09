@@ -1,12 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Contact from '@/components/Contact';
 
-// Mock the animated components
-jest.mock('@/components/AnimatedContactText', () => {
-  return function MockAnimatedContactText({ text }: { text: string }) {
-    return <span>{text}</span>;
-  };
-});
 
 jest.mock('@/components/BlurText', () => {
   return function MockBlurText({ text, ...props }: { text: string }) {

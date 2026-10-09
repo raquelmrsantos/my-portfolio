@@ -1,6 +1,5 @@
 'use client';
 
-import AnimatedContactText from './AnimatedContactText';
 import BlurText from './BlurText';
 import ScrambledText from './ScrambledText';
 import { DownloadIcon } from './ui/DownloadIcon';
@@ -51,7 +50,7 @@ export default function Contact() {
                 data-testid='email-link'
               >
                 <MailIcon className='cursor-target' aria-hidden='true' />{' '}
-                <AnimatedContactText text='[ Email ]' />
+                <span className='uppercase'>Email</span>
               </a>
               <a
                 href='https://www.linkedin.com/in/raquelmrsantos'
@@ -62,7 +61,7 @@ export default function Contact() {
                 data-testid='linkedin-link'
               >
                 <LinkedInIcon className='cursor-target' aria-hidden='true' />{' '}
-                <AnimatedContactText text='[ LinkedIn ]' />
+                <span className='uppercase'>LinkedIn</span>
               </a>
               <a
                 href='https://github.com/raquelmrsantos'
@@ -73,7 +72,7 @@ export default function Contact() {
                 data-testid='github-link'
               >
                 <GithubIcon className='cursor-target' aria-hidden='true' />{' '}
-                <AnimatedContactText text='[ GitHub ]' />
+                <span className='uppercase'>GitHub</span>
               </a>
               <a
                 href='/CV_Raquel_Santos_dev.pdf'
@@ -83,7 +82,7 @@ export default function Contact() {
                 data-testid='cv-link'
               >
                 <DownloadIcon className='cursor-target' aria-hidden='true' />{' '}
-                <AnimatedContactText text='[ Download CV ]' />
+                <span className='uppercase'>Download CV</span>
               </a>
             </div>
           </div>

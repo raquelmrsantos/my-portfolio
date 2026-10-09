@@ -2,15 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import AnimatedText from './AnimatedText';
 import MobileMenu from './MobileMenu';
 
 const navItems = [
-  { name: '[ Home ]', href: '#home' },
-  { name: '[ About Me ]', href: '#about' },
-  { name: '[ Experience ]', href: '#experience' },
-  { name: '[ Services ]', href: '#services' },
-  { name: '[ Connect ]', href: '#connect' },
+  { name: 'Home', href: '#home' },
+  { name: 'About Me', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Services', href: '#services' },
+  { name: 'Connect', href: '#connect' },
 ];
 
 export default function Navbar() {
@@ -75,12 +74,10 @@ export default function Navbar() {
                   onClick={() => handleNavClick(item.href)}
                   className='cursor-pointer text-base tracking-wide uppercase text-white hover:opacity-70 transition-opacity cursor-target'
                   role='menuitem'
-                  aria-label={`Go to ${item.name
-                    .replace(/[\[\]]/g, '')
-                    .trim()} section`}
+                  aria-label={`Go to ${item.name} section`}
                   data-testid={`nav-${item.href.replace('#', '')}`}
                 >
-                  <AnimatedText text={item.name} />
+                  {item.name}
                 </button>
               ))}
             </div>
@@ -111,7 +108,7 @@ export default function Navbar() {
                     }`}
                     aria-hidden='true'
                   >
-                    [CLOSE]
+                    CLOSE
                   </span>
                   <span
                     className={`text-white mix-blend-difference transition-opacity ${
@@ -119,7 +116,7 @@ export default function Navbar() {
                     }`}
                     aria-hidden='true'
                   >
-                    [MENU]
+                    MENU
                   </span>
                 </span>
               </button>

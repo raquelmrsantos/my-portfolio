@@ -38,12 +38,10 @@ export default function MobileMenu({
                 className='mobile-menu-item font-sofia-sans-condensed font-bold'
                 style={{ transitionDelay: `${0.1 + index * 0.05}s` }}
                 role='menuitem'
-                aria-label={`Go to ${item.name
-                  .replace(/[\[\]]/g, '')
-                  .trim()} section`}
+                aria-label={`Go to ${item.name} section`}
                 data-testid={`mobile-${item.href.replace('#', '')}-button`}
               >
-                {item.name.replace(/\[|\]/g, '').trim()}
+                {item.name}
               </button>
             ))}
           </div>
