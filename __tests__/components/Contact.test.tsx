@@ -1,6 +1,6 @@
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Contact from '@/components/Contact';
-
 
 jest.mock('@/components/BlurText', () => {
   return function MockBlurText({ text, ...props }: { text: string }) {
@@ -53,12 +53,6 @@ describe('Contact Component', () => {
     expect(githubLink).toHaveAttribute('target', '_blank');
     expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
     expect(githubLink).toHaveAttribute('aria-label', 'Visit my GitHub profile');
-
-    // Test CV download link
-    const cvLink = screen.getByTestId('cv-link');
-    expect(cvLink).toHaveAttribute('href', '/CV_Raquel_Santos_dev.pdf');
-    expect(cvLink).toHaveAttribute('download');
-    expect(cvLink).toHaveAttribute('aria-label', 'Download my CV');
   });
 
   it('renders section with proper accessibility attributes', () => {
@@ -84,3 +78,4 @@ describe('Contact Component', () => {
     );
   });
 });
+

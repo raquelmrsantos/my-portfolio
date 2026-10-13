@@ -2,7 +2,6 @@
 
 import BlurText from './BlurText';
 import ScrambledText from './ScrambledText';
-import { DownloadIcon } from './ui/DownloadIcon';
 import { GithubIcon } from './ui/GithubIcon';
 import { LinkedInIcon } from './ui/LinkedinIcon';
 import { MailIcon } from './ui/MailIcon';
@@ -87,20 +86,6 @@ export default function Contact() {
                   <span className='flex items-center gap-2'>
                     <GithubIcon aria-hidden='true' />
                     <span className='uppercase'>GitHub</span>
-                  </span>
-                </RollingItem>
-              </a>
-              <a
-                href='/CV_Raquel_Santos_dev.pdf'
-                download
-                className='font-light flex items-center gap-2 p-2 cursor-target'
-                aria-label='Download my CV'
-                data-testid='cv-link'
-              >
-                <RollingItem>
-                  <span className='flex items-center gap-2'>
-                    <DownloadIcon aria-hidden='true' />
-                    <span className='uppercase'>Download CV</span>
                   </span>
                 </RollingItem>
               </a>
